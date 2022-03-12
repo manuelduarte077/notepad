@@ -19,7 +19,11 @@ class HomeComponents {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: const [
-            Icon(Icons.delete, color: Colors.red, size: 30),
+            Icon(
+              Icons.delete,
+              color: Colors.red,
+              size: 30,
+            ),
           ],
         ),
       ),
@@ -39,7 +43,7 @@ class HomeComponents {
   }) {
     return Card(
       elevation: 0,
-      color: Colors.deepPurpleAccent,
+      color: const Color(0xff5578AA),
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(5),
       ),
@@ -74,15 +78,17 @@ class HomeComponents {
   Widget btnCreateNote({required Function onTap}) {
     return TextButton.icon(
       style: TextButton.styleFrom(
-        backgroundColor: Colors.deepPurpleAccent,
-        visualDensity: VisualDensity.comfortable,
+        backgroundColor: Colors.indigo[900],
         padding: const EdgeInsets.only(left: 8.0, right: 16.0),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(8.0),
         ),
       ),
       icon: const Icon(Icons.add, color: Colors.white),
-      label: const Text('Crear nota', style: TextStyle(color: Colors.white)),
+      label: const Text(
+        'Crear nota',
+        style: TextStyle(color: Colors.white, fontSize: 15),
+      ),
       onPressed: () {
         onTap();
       },

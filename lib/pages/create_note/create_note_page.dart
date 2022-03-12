@@ -59,8 +59,8 @@ class _CreateNoteActivityState extends State<CreateNoteActivity>
       ),
       floatingActionButton: FloatingActionButton.extended(
         icon: const Icon(Icons.code),
-        label: const Text('View'),
-        backgroundColor: Colors.deepPurpleAccent,
+        label: const Text('Preview'),
+        backgroundColor: Colors.indigo[900],
         onPressed: () {
           _controller.viewMarkdown(context: context);
         },

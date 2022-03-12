@@ -27,7 +27,7 @@ class _ShowNoteActivityState extends State<ShowNoteActivity> {
     return Scaffold(
       appBar: AppBar(
         title: RxBuilder(builder: (_) => Text(_controller.note.value.title)),
-        backgroundColor: Colors.blueGrey.shade900,
+        backgroundColor: const Color(0xff111822),
         elevation: 0,
         systemOverlayStyle: SystemUiOverlayStyle.light,
       ),

@@ -24,10 +24,10 @@ class _HomeState extends State<Home> with HomeComponents {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueGrey.shade900.withBlue(80),
+      backgroundColor: const Color(0xff111822),
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: Colors.blueGrey.shade900,
+        backgroundColor: const Color(0xff111822),
         title: const Text('Notepad'),
         actions: [
           RxBuilder(
@@ -59,10 +59,11 @@ class _HomeState extends State<Home> with HomeComponents {
         );
       }),
       bottomNavigationBar: BottomAppBar(
-        color: Colors.blueGrey[900],
-        elevation: 15,
+        color: const Color(0xff111822),
+        elevation: 0,
         child: Padding(
-          padding: const EdgeInsets.only(left: 8, right: 8),
+          padding:
+              const EdgeInsets.only(left: 8, right: 8, bottom: 10, top: 10),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

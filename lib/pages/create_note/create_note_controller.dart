@@ -41,7 +41,7 @@ class CreateNoteController {
         content: Text(message),
         duration: const Duration(seconds: 1),
         elevation: 22,
-        backgroundColor: Colors.deepPurple,
+        backgroundColor: Colors.redAccent[100],
         behavior: SnackBarBehavior.fixed,
       ),
     );
