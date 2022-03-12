@@ -10,13 +10,14 @@ class ListItemConfiguration extends StatelessWidget {
   Function itemFunction = () {};
 
   ListItemConfiguration({
+    Key? key,
     required this.context,
     required this.icon,
     required this.title,
     required this.subtitle,
     required this.showMarkdown,
     required this.itemFunction,
-  });
+  }) : super(key: key);
 
   void showMessage(String message) {
     asuka.showSnackBar(SnackBar(content: Text(message)));
@@ -26,19 +27,19 @@ class ListItemConfiguration extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListTile(
       leading: Icon(
-        this.icon,
+        icon,
         color: Colors.white,
       ),
       title: Text(
-        this.title,
-        style: TextStyle(
+        title,
+        style: const TextStyle(
           color: Colors.white,
           fontWeight: FontWeight.bold,
         ),
       ),
       subtitle: Text(
-        this.subtitle,
-        style: TextStyle(
+        subtitle,
+        style: const TextStyle(
           color: Colors.white,
         ),
       ),
@@ -52,7 +53,7 @@ class ListItemConfiguration extends StatelessWidget {
     );
   }
 
-  Future<Null> _openMarkdownDocumentation() async {
+  Future<void> _openMarkdownDocumentation() async {
     String url =
         'https://docs.microsoft.com/pt-br/contribute/how-to-write-use-markdown';
     showMessage('Opening $url');

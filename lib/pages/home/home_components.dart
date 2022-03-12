@@ -46,21 +46,21 @@ class HomeComponents {
       child: ListTile(
         title: Text(
           note.title,
-          style: TextStyle(
+          style: const TextStyle(
               color: Colors.white,
               fontWeight: FontWeight.bold,
               textBaseline: TextBaseline.alphabetic),
         ),
         subtitle: Container(
-          padding: EdgeInsets.symmetric(horizontal: 0, vertical: 8),
+          padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 8),
           child: Text(
             note.description,
             maxLines: 9,
-            style: TextStyle(color: Colors.white),
+            style: const TextStyle(color: Colors.white),
           ),
         ),
         trailing: IconButton(
-            icon: Icon(Icons.edit, color: Colors.white),
+            icon: const Icon(Icons.edit, color: Colors.white),
             onPressed: () {
               onEdit();
             }),
@@ -81,8 +81,8 @@ class HomeComponents {
           borderRadius: BorderRadius.circular(8.0),
         ),
       ),
-      icon: Icon(Icons.add, color: Colors.white),
-      label: Text('Crear nota', style: TextStyle(color: Colors.white)),
+      icon: const Icon(Icons.add, color: Colors.white),
+      label: const Text('Crear nota', style: TextStyle(color: Colors.white)),
       onPressed: () {
         onTap();
       },
@@ -91,8 +91,8 @@ class HomeComponents {
 
   btnShowBottomDialog({required Function onTap}) {
     return TextButton.icon(
-      icon: Icon(Icons.list, color: Colors.white),
-      label: Text(''),
+      icon: const Icon(Icons.list, color: Colors.white),
+      label: const Text(''),
       onPressed: () {
         onTap();
       },

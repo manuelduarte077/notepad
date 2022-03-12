@@ -1,6 +1,4 @@
 import 'package:flutter/services.dart';
-import 'package:notepad/core/data/SQFLite.dart';
-import 'package:notepad/core/models/note.dart';
 import 'package:notepad/pages/show_note/show_note_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
@@ -8,7 +6,7 @@ import 'package:rx_notifier/rx_notifier.dart';
 
 class ShowNoteActivity extends StatefulWidget {
   int noteId;
-  ShowNoteActivity(this.noteId);
+  ShowNoteActivity(this.noteId, {Key? key}) : super(key: key);
 
   @override
   _ShowNoteActivityState createState() => _ShowNoteActivityState();
@@ -33,7 +31,7 @@ class _ShowNoteActivityState extends State<ShowNoteActivity> {
         elevation: 0,
         systemOverlayStyle: SystemUiOverlayStyle.light,
       ),
-      body: Container(
+      body: SizedBox(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         child: Scrollbar(

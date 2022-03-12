@@ -39,7 +39,7 @@ class CreateNoteController {
     asuka.showSnackBar(
       SnackBar(
         content: Text(message),
-        duration: Duration(seconds: 1),
+        duration: const Duration(seconds: 1),
         elevation: 22,
         backgroundColor: Colors.deepPurple,
         behavior: SnackBarBehavior.fixed,
@@ -49,7 +49,7 @@ class CreateNoteController {
 
   void viewMarkdown({required BuildContext context}) {
     if (noteId == null) {
-      showMessage('Nada digitado até o momento');
+      showMessage('Please create note first');
     } else {
       Navigator.push(
         context,

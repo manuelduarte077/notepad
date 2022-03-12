@@ -56,16 +56,15 @@ class HomeController {
   }
 
   void deleteNote({required int id}) async {
-    print('ponto de parada');
     SQLFlite sqlFlite = SQLFlite();
     await sqlFlite.deleteNoteOfID(id);
     notes.removeWhere((note) => note.id == id);
-    showMessage('Nota deletada');
+    showMessage('Nota eliminada');
   }
 
   void shareApp() {
     Share.share(
-        'Markdown editor, editor de markdown simples de utilizar, sem anúncios. '
-        'Baixe agora mesmo em https://play.google.com/store/apps/details?id=com.pedrohenriquedevbr.dolar_agora');
+        'Markdown editor, editor de markdown simple de utilizar, sin anuncios '
+        'https://play.google.com/store/apps/details?id=com.notepad.markdown');
   }
 }

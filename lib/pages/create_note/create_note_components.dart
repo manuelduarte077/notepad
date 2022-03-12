@@ -35,10 +35,10 @@ class CreateNoteComponents {
       minLines: 30,
       maxLines: null,
       controller: txtDescription,
-      style: TextStyle(
+      style: const TextStyle(
         color: Colors.white,
       ),
-      decoration: InputDecoration(
+      decoration: const InputDecoration(
         border: InputBorder.none,
         hintText: 'Descripción de la nota',
         hintStyle: TextStyle(

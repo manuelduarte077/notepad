@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:rx_notifier/rx_notifier.dart';
 
 class Home extends StatefulWidget {
+  const Home({Key? key}) : super(key: key);
+
   @override
   _HomeState createState() => _HomeState();
 }
@@ -38,26 +40,24 @@ class _HomeState extends State<Home> with HomeComponents {
         ],
         systemOverlayStyle: SystemUiOverlayStyle.light,
       ),
-      body: Container(
-        child: RxBuilder(builder: (_) {
-          return ListView.builder(
-            padding: EdgeInsets.all(4),
-            itemCount: _controller.notes.length,
-            itemBuilder: (context, index) {
-              return createItemList(
-                context: context,
-                note: _controller.notes[index],
-                onTap: () => _controller.showNote(
-                    context: context, id: _controller.notes[index].id!),
-                onEdit: () => _controller.editNote(
-                    context: context, id: _controller.notes[index].id!),
-                onDelete: () =>
-                    _controller.deleteNote(id: _controller.notes[index].id!),
-              );
-            },
-          );
-        }),
-      ),
+      body: RxBuilder(builder: (_) {
+        return ListView.builder(
+          padding: const EdgeInsets.all(4),
+          itemCount: _controller.notes.length,
+          itemBuilder: (context, index) {
+            return createItemList(
+              context: context,
+              note: _controller.notes[index],
+              onTap: () => _controller.showNote(
+                  context: context, id: _controller.notes[index].id!),
+              onEdit: () => _controller.editNote(
+                  context: context, id: _controller.notes[index].id!),
+              onDelete: () =>
+                  _controller.deleteNote(id: _controller.notes[index].id!),
+            );
+          },
+        );
+      }),
       bottomNavigationBar: BottomAppBar(
         color: Colors.blueGrey[900],
         elevation: 15,
@@ -70,12 +70,13 @@ class _HomeState extends State<Home> with HomeComponents {
                   onTap: () => _controller.createNote(context: context)),
               btnShowBottomDialog(
                 onTap: () => () {
-                  showModalBottomSheet<Null>(
+                  showModalBottomSheet<void>(
                     context: context,
                     builder: (BuildContext context) {
                       return bottomDrawer(
-                          context: context,
-                          shareFunction: _controller.shareApp);
+                        context: context,
+                        shareFunction: _controller.shareApp,
+                      );
                     },
                   );
                 },
