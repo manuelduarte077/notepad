@@ -7,6 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:rx_notifier/rx_notifier.dart';
 import 'package:share/share.dart';
 
+import 'package:url_launcher/url_launcher.dart';
+
 class HomeController {
   RxList<Note> notes = RxList<Note>([]);
   RxNotifier<bool> orderDesc = RxNotifier<bool>(false);
@@ -66,5 +68,11 @@ class HomeController {
     Share.share(
         'Markdown editor, editor de markdown simple de utilizar, sin anuncios '
         'https://github.com/manuelduarte077/notepad');
+  }
+
+  final Uri _url = Uri.parse('https://github.com/manuelduarte077');
+
+  void showAbout() async {
+    if (!await launchUrl(_url)) throw 'Could not launch $_url';
   }
 }

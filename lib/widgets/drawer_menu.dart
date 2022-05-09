@@ -42,6 +42,14 @@ class DrawerMenu extends StatelessWidget {
             showMarkdown: false,
             itemFunction: _controller.shareApp,
           ),
+          ListItemConfiguration(
+            context: context,
+            icon: Icons.info,
+            title: 'About',
+            subtitle: 'About the app and its creator',
+            showMarkdown: false,
+            itemFunction: _controller.showAbout,
+          )
         ],
       ),
     );

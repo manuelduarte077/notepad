@@ -1,5 +1,28 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.notepad">
+
+    <!-- The INTERNET permission is required for development. Specifically,
+    flutter needs it to communicate with the running application
+    to allow setting breakpoints, to provide hot reload, etc.
+        -->
+   <uses-permission android:name="android.permission.INTERNET"/>
+
+    <!-- Provide required visibility configuration for API level 30 and above -->
+    <queries>
+        <intent>å
+        <action android:name="android.intent.action.VIEW" />
+        <data android:scheme="https" />
+        </intent>
+        <intent>
+        <action android:name="android.intent.action.DIAL" />
+        <data android:scheme="tel" />
+        </intent>
+        <intent>
+        <action android:name="android.intent.action.SENDTO" />
+        <data android:scheme="smsto" />
+        </intent>
+    </queries>
+
    <application
         android:label="notepad"
         android:name="${applicationName}"
