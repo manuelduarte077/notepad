@@ -28,7 +28,7 @@ class ListItemConfiguration extends StatelessWidget {
     return ListTile(
       leading: Icon(
         icon,
-        color: Colors.black,
+        color: Colors.indigo,
       ),
       title: Text(
         title,

@@ -5,8 +5,8 @@ import 'package:rx_notifier/rx_notifier.dart';
 
 import 'package:notepad/core/models/note.dart';
 import 'package:notepad/core/data/SQFLite.dart';
-import 'package:notepad/pages/create_note/create_note_page.dart';
-import 'package:notepad/pages/show_note/show_note_page.dart';
+import 'package:notepad/features/create_note/create_note_page.dart';
+import 'package:notepad/features/show_note/show_note_page.dart';
 
 import 'package:url_launcher/url_launcher.dart';
 

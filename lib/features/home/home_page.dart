@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:rx_notifier/rx_notifier.dart';
 
 import 'package:notepad/widgets/widgets.dart';
-import 'package:notepad/pages/home/home_controller.dart';
-import 'package:notepad/pages/home/home_components.dart';
+import 'package:notepad/features/home/home_controller.dart';
+import 'package:notepad/features/home/home_components.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
