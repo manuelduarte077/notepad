@@ -65,6 +65,6 @@ class HomeController {
   void shareApp() {
     Share.share(
         'Markdown editor, editor de markdown simple de utilizar, sin anuncios '
-        'https://play.google.com/store/apps/details?id=com.notepad.markdown');
+        'https://github.com/manuelduarte077/notepad');
   }
 }
