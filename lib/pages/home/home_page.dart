@@ -1,4 +1,5 @@
 import 'package:flutter/services.dart';
+import 'package:notepad/core/components/list_item_configuration.dart';
 import 'package:notepad/pages/home/home_components.dart';
 import 'package:notepad/pages/home/home_controller.dart';
 import 'package:flutter/material.dart';
@@ -40,24 +41,48 @@ class _HomeState extends State<Home> with HomeComponents {
         ],
         systemOverlayStyle: SystemUiOverlayStyle.light,
       ),
-      body: RxBuilder(builder: (_) {
-        return ListView.builder(
-          padding: const EdgeInsets.all(4),
-          itemCount: _controller.notes.length,
-          itemBuilder: (context, index) {
-            return createItemList(
-              context: context,
-              note: _controller.notes[index],
-              onTap: () => _controller.showNote(
-                  context: context, id: _controller.notes[index].id!),
-              onEdit: () => _controller.editNote(
-                  context: context, id: _controller.notes[index].id!),
-              onDelete: () =>
-                  _controller.deleteNote(id: _controller.notes[index].id!),
-            );
-          },
-        );
-      }),
+      drawer: Drawer(
+        child: Container(
+          color: const Color(0xff111822),
+          child: DrawerHeader(
+            child: Column(
+              children: const [
+                SizedBox(height: 20),
+                CircleAvatar(
+                  backgroundColor: Colors.white,
+                  radius: 40,
+                  child: Icon(Icons.note, color: Colors.black, size: 40),
+                ),
+                SizedBox(height: 10),
+                Text(
+                  'Notepad',
+                  style: TextStyle(color: Colors.white, fontSize: 25),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+      body: RxBuilder(
+        builder: (_) {
+          return ListView.builder(
+            padding: const EdgeInsets.all(4),
+            itemCount: _controller.notes.length,
+            itemBuilder: (context, index) {
+              return createItemList(
+                context: context,
+                note: _controller.notes[index],
+                onTap: () => _controller.showNote(
+                    context: context, id: _controller.notes[index].id!),
+                onEdit: () => _controller.editNote(
+                    context: context, id: _controller.notes[index].id!),
+                onDelete: () =>
+                    _controller.deleteNote(id: _controller.notes[index].id!),
+              );
+            },
+          );
+        },
+      ),
       bottomNavigationBar: BottomAppBar(
         color: const Color(0xff111822),
         elevation: 0,
@@ -69,19 +94,6 @@ class _HomeState extends State<Home> with HomeComponents {
             children: [
               btnCreateNote(
                   onTap: () => _controller.createNote(context: context)),
-              btnShowBottomDialog(
-                onTap: () => () {
-                  showModalBottomSheet<void>(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return bottomDrawer(
-                        context: context,
-                        shareFunction: _controller.shareApp,
-                      );
-                    },
-                  );
-                },
-              ),
             ],
           ),
         ),

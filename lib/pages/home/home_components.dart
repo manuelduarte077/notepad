@@ -100,6 +100,13 @@ class HomeComponents {
       icon: const Icon(Icons.list, color: Colors.white),
       label: const Text(''),
       onPressed: () {
+        if (onTap == null) {
+          print('pressed');
+          onTap();
+        } else {
+          print('No hay funcion para mostrar el dialogo');
+        }
+
         onTap();
       },
     );
