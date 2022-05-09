@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:notepad/core/components/list_item_configuration.dart';
+
 import 'package:notepad/pages/home/home_controller.dart';
+import 'package:notepad/core/components/list_item_configuration.dart';
 
 class DrawerMenu extends StatelessWidget {
   const DrawerMenu({

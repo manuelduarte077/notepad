@@ -1,8 +1,9 @@
 import 'package:flutter/services.dart';
-import 'package:notepad/pages/create_note/create_note_components.dart';
-import 'package:notepad/pages/create_note/create_note_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:rx_notifier/rx_notifier.dart';
+
+import 'package:notepad/pages/create_note/create_note_controller.dart';
+import 'package:notepad/pages/create_note/create_note_components.dart';
 
 class CreateNoteActivity extends StatefulWidget {
   int? id;

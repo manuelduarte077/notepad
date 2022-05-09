@@ -1,6 +1,5 @@
-import 'package:notepad/core/components/list_item_configuration.dart';
-import 'package:notepad/core/models/note.dart';
 import 'package:flutter/material.dart';
+import 'package:notepad/core/models/note.dart';
 
 class HomeComponents {
   Widget createItemList(

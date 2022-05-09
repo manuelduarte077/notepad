@@ -1,9 +1,10 @@
+import 'package:flutter/material.dart';
 import 'package:asuka/asuka.dart' as asuka;
+import 'package:rx_notifier/rx_notifier.dart';
+
 import 'package:notepad/core/data/SQFLite.dart';
 import 'package:notepad/core/models/note.dart';
 import 'package:notepad/pages/show_note/show_note_page.dart';
-import 'package:flutter/material.dart';
-import 'package:rx_notifier/rx_notifier.dart';
 
 class CreateNoteController {
 //  bool _visible = false;
