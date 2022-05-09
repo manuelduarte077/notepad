@@ -14,45 +14,35 @@ class DrawerMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child: Container(
-        color: const Color(0xff111822),
-        child: DrawerHeader(
-          child: Column(
-            children: [
-              const SizedBox(height: 20),
-              const CircleAvatar(
-                backgroundColor: Colors.white,
-                radius: 40,
-                child: Icon(Icons.note, color: Colors.black, size: 40),
-              ),
-              const SizedBox(height: 10),
-              const Text(
-                'Notepad',
-                style: TextStyle(color: Colors.white, fontSize: 25),
-              ),
-              const SizedBox(height: 30),
-              ListItemConfiguration(
-                context: context,
-                icon: Icons.library_books,
-                title: 'Markdown',
-                subtitle:
-                    'Manual Markdown, learn markdown and optimize as your notes',
-                showMarkdown: true,
-                itemFunction: () {},
-              ),
-              const SizedBox(height: 30),
-              ListItemConfiguration(
-                context: context,
-                icon: Icons.share,
-                title: 'Share',
-                subtitle:
-                    'Help improve the app by sharing it with your friends',
-                showMarkdown: false,
-                itemFunction: _controller.shareApp,
-              ),
-            ],
+      child: ListView(
+        padding: EdgeInsets.zero,
+        children: [
+          const UserAccountsDrawerHeader(
+            accountEmail: Text('@manuelduarte077'),
+            accountName: Text('Notepad',
+                style: TextStyle(color: Colors.white, fontSize: 25)),
+            decoration: BoxDecoration(color: Color(0xff111822)),
+            currentAccountPicture: FlutterLogo(),
           ),
-        ),
+          const SizedBox(height: 20),
+          ListItemConfiguration(
+            context: context,
+            icon: Icons.library_books,
+            title: 'Markdown',
+            subtitle:
+                'Manual Markdown, learn markdown and optimize as your notes',
+            showMarkdown: true,
+            itemFunction: () {},
+          ),
+          ListItemConfiguration(
+            context: context,
+            icon: Icons.share,
+            title: 'Share',
+            subtitle: 'Help improve the app by sharing it with your friends',
+            showMarkdown: false,
+            itemFunction: _controller.shareApp,
+          ),
+        ],
       ),
     );
   }
