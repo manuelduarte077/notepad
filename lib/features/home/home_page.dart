@@ -63,21 +63,12 @@ class _HomeState extends State<Home> with HomeComponents {
           );
         },
       ),
-      bottomNavigationBar: BottomAppBar(
-        color: const Color(0xff111822),
-        elevation: 0,
-        child: Padding(
-          padding:
-              const EdgeInsets.only(left: 8, right: 8, bottom: 10, top: 10),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              btnCreateNote(
-                  onTap: () => _controller.createNote(context: context)),
-            ],
-          ),
-        ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => _controller.createNote(context: context),
+        child: const Icon(Icons.create_outlined),
+        backgroundColor: const Color(0xff111822),
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
 }
