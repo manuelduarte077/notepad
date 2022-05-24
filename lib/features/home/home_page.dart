@@ -66,7 +66,7 @@ class _HomeState extends State<Home> with HomeComponents {
       floatingActionButton: FloatingActionButton(
         onPressed: () => _controller.createNote(context: context),
         child: const Icon(Icons.create_outlined),
-        backgroundColor: const Color(0xff111822),
+        backgroundColor: Colors.deepPurple,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
