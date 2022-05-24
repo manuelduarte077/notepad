@@ -28,19 +28,19 @@ class ListItemConfiguration extends StatelessWidget {
     return ListTile(
       leading: Icon(
         icon,
-        color: Colors.white,
+        color: Colors.indigo,
       ),
       title: Text(
         title,
         style: const TextStyle(
-          color: Colors.white,
+          color: Colors.black,
           fontWeight: FontWeight.bold,
         ),
       ),
       subtitle: Text(
         subtitle,
         style: const TextStyle(
-          color: Colors.white,
+          color: Colors.black,
         ),
       ),
       onTap: () {

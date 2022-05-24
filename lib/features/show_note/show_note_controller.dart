@@ -1,6 +1,7 @@
+import 'package:rx_notifier/rx_notifier.dart';
+
 import 'package:notepad/core/data/SQFLite.dart';
 import 'package:notepad/core/models/note.dart';
-import 'package:rx_notifier/rx_notifier.dart';
 
 class ShowNoteController {
   RxNotifier<Note> note = RxNotifier<Note>(Note('', ''));

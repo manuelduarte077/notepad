@@ -1,11 +1,14 @@
-import 'package:asuka/asuka.dart' as asuka;
-import 'package:notepad/core/data/SQFLite.dart';
-import 'package:notepad/core/models/note.dart';
-import 'package:notepad/pages/create_note/create_note_page.dart';
-import 'package:notepad/pages/show_note/show_note_page.dart';
-import 'package:flutter/material.dart';
-import 'package:rx_notifier/rx_notifier.dart';
 import 'package:share/share.dart';
+import 'package:flutter/material.dart';
+import 'package:asuka/asuka.dart' as asuka;
+import 'package:rx_notifier/rx_notifier.dart';
+
+import 'package:notepad/core/models/note.dart';
+import 'package:notepad/core/data/SQFLite.dart';
+import 'package:notepad/features/create_note/create_note_page.dart';
+import 'package:notepad/features/show_note/show_note_page.dart';
+
+import 'package:url_launcher/url_launcher.dart';
 
 class HomeController {
   RxList<Note> notes = RxList<Note>([]);
@@ -65,6 +68,12 @@ class HomeController {
   void shareApp() {
     Share.share(
         'Markdown editor, editor de markdown simple de utilizar, sin anuncios '
-        'https://play.google.com/store/apps/details?id=com.notepad.markdown');
+        'https://github.com/manuelduarte077/notepad');
+  }
+
+  final Uri _url = Uri.parse('https://github.com/manuelduarte077');
+
+  void showAbout() async {
+    if (!await launchUrl(_url)) throw 'Could not launch $_url';
   }
 }

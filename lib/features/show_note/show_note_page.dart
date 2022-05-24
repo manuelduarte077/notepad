@@ -1,8 +1,10 @@
 import 'package:flutter/services.dart';
-import 'package:notepad/pages/show_note/show_note_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_markdown/flutter_markdown.dart';
+
 import 'package:rx_notifier/rx_notifier.dart';
+import 'package:flutter_markdown/flutter_markdown.dart';
+
+import 'package:notepad/features/show_note/show_note_controller.dart';
 
 class ShowNoteActivity extends StatefulWidget {
   int noteId;

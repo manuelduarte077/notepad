@@ -1,9 +1,10 @@
 import 'package:flutter/services.dart';
-import 'package:notepad/core/components/list_item_configuration.dart';
-import 'package:notepad/pages/home/home_components.dart';
-import 'package:notepad/pages/home/home_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:rx_notifier/rx_notifier.dart';
+
+import 'package:notepad/widgets/widgets.dart';
+import 'package:notepad/features/home/home_controller.dart';
+import 'package:notepad/features/home/home_components.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -41,28 +42,7 @@ class _HomeState extends State<Home> with HomeComponents {
         ],
         systemOverlayStyle: SystemUiOverlayStyle.light,
       ),
-      drawer: Drawer(
-        child: Container(
-          color: const Color(0xff111822),
-          child: DrawerHeader(
-            child: Column(
-              children: const [
-                SizedBox(height: 20),
-                CircleAvatar(
-                  backgroundColor: Colors.white,
-                  radius: 40,
-                  child: Icon(Icons.note, color: Colors.black, size: 40),
-                ),
-                SizedBox(height: 10),
-                Text(
-                  'Notepad',
-                  style: TextStyle(color: Colors.white, fontSize: 25),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
+      drawer: DrawerMenu(controller: _controller),
       body: RxBuilder(
         builder: (_) {
           return ListView.builder(
@@ -83,21 +63,12 @@ class _HomeState extends State<Home> with HomeComponents {
           );
         },
       ),
-      bottomNavigationBar: BottomAppBar(
-        color: const Color(0xff111822),
-        elevation: 0,
-        child: Padding(
-          padding:
-              const EdgeInsets.only(left: 8, right: 8, bottom: 10, top: 10),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              btnCreateNote(
-                  onTap: () => _controller.createNote(context: context)),
-            ],
-          ),
-        ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => _controller.createNote(context: context),
+        child: const Icon(Icons.create_outlined),
+        backgroundColor: Colors.deepPurple,
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
 }

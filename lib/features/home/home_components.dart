@@ -1,6 +1,5 @@
-import 'package:notepad/core/components/list_item_configuration.dart';
-import 'package:notepad/core/models/note.dart';
 import 'package:flutter/material.dart';
+import 'package:notepad/core/models/note.dart';
 
 class HomeComponents {
   Widget createItemList(
@@ -92,73 +91,6 @@ class HomeComponents {
       onPressed: () {
         onTap();
       },
-    );
-  }
-
-  btnShowBottomDialog({required Function onTap}) {
-    return TextButton.icon(
-      icon: const Icon(Icons.list, color: Colors.white),
-      label: const Text(''),
-      onPressed: () {
-        if (onTap == null) {
-          print('pressed');
-          onTap();
-        } else {
-          print('No hay funcion para mostrar el dialogo');
-        }
-
-        onTap();
-      },
-    );
-  }
-
-  Widget bottomDrawer({
-    required BuildContext context,
-    required Function shareFunction,
-  }) {
-    return Drawer(
-      child: Container(
-        color: Colors.black,
-        child: Column(
-          children: [
-            Container(
-              width: double.infinity,
-              color: Colors.deepPurple,
-              height: 40,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: const [
-                  Text(
-                    'Settings',
-                    style: TextStyle(color: Colors.white, fontSize: 18),
-                  )
-                ],
-              ),
-            ),
-            const SizedBox(
-              height: 8,
-            ),
-            ListItemConfiguration(
-              context: context,
-              icon: Icons.library_books,
-              title: 'Markdown',
-              subtitle:
-                  'Manual Markdown, learn markdown and optimize as your notes',
-              showMarkdown: true,
-              itemFunction: () {},
-            ),
-            ListItemConfiguration(
-              context: context,
-              icon: Icons.share,
-              title: 'Share',
-              subtitle: 'Help improve the app by sharing it with your friends',
-              showMarkdown: false,
-              itemFunction: shareFunction,
-            ),
-          ],
-        ),
-      ),
     );
   }
 }

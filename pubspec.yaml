@@ -14,14 +14,24 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_markdown: ^0.6.9
+  icons_launcher: ^1.1.7
   rx_notifier: ^1.1.0
   share: ^2.0.4
   sqflite: ^2.0.2
+  url_launcher: ^6.1.0
 
 dev_dependencies:
   flutter_lints: ^1.0.0
   flutter_test:
     sdk: flutter
 
+flutter_icons:
+  image_path: 'assets/icon/ic_logo.png'
+  ios: true
+  android: true
+
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/
