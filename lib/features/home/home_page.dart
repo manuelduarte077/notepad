@@ -30,7 +30,8 @@ class _HomeState extends State<Home> with HomeComponents {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: const Color(0xff111822),
-        title: const Text('Notepad'),
+        title: const Text('Notepad', style: TextStyle(color: Colors.white)),
+        centerTitle: true,
         actions: [
           RxBuilder(
             builder: (_) => IconButton(
