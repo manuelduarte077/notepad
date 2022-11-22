@@ -1,12 +1,13 @@
 name: notepad
 description: Note App
 
-publish_to: 'none'
+publish_to: "none"
 
 version: 1.0.0+1
 
 environment:
-  sdk: '>=2.16.1 <3.0.0'
+  sdk: ">=2.18.4 <3.0.0"
+  flutter: 3.3.8
 
 dependencies:
   asuka: ^2.0.0+1
@@ -26,7 +27,7 @@ dev_dependencies:
     sdk: flutter
 
 flutter_icons:
-  image_path: 'assets/icon/ic_logo.png'
+  image_path: "assets/icon/ic_logo.png"
   ios: true
   android: true
 
