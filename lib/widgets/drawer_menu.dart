@@ -15,13 +15,16 @@ class DrawerMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      backgroundColor: Colors.white,
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
           const UserAccountsDrawerHeader(
             accountEmail: Text('@manuelduarte077'),
-            accountName: Text('Notepad',
-                style: TextStyle(color: Colors.white, fontSize: 25)),
+            accountName: Text(
+              'Notepad',
+              style: TextStyle(color: Colors.white, fontSize: 25),
+            ),
             decoration: BoxDecoration(color: Color(0xff111822)),
             currentAccountPicture: FlutterLogo(),
           ),

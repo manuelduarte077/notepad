@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:asuka/asuka.dart' as asuka;
+import 'package:asuka/asuka.dart';
 
 class ListItemConfiguration extends StatelessWidget {
   BuildContext context;
@@ -10,17 +10,17 @@ class ListItemConfiguration extends StatelessWidget {
   Function itemFunction = () {};
 
   ListItemConfiguration({
-    Key? key,
+    super.key,
     required this.context,
     required this.icon,
     required this.title,
     required this.subtitle,
     required this.showMarkdown,
     required this.itemFunction,
-  }) : super(key: key);
+  });
 
   void showMessage(String message) {
-    asuka.showSnackBar(SnackBar(content: Text(message)));
+    Asuka.showSnackBar(SnackBar(content: Text(message)));
   }
 
   @override
