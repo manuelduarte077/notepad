@@ -1,6 +1,6 @@
-import 'package:share/share.dart';
+import 'package:share_plus/share_plus.dart';
 import 'package:flutter/material.dart';
-import 'package:asuka/asuka.dart' as asuka;
+import 'package:asuka/asuka.dart';
 import 'package:rx_notifier/rx_notifier.dart';
 
 import 'package:notepad/core/models/note.dart';
@@ -16,7 +16,7 @@ class HomeController {
   RxNotifier<IconData> iconOrder = RxNotifier<IconData>(Icons.arrow_downward);
 
   void showMessage(String message) {
-    asuka.showSnackBar(SnackBar(content: Text(message)));
+    Asuka.showSnackBar(SnackBar(content: Text(message)));
   }
 
   void orderList() {
@@ -65,10 +65,10 @@ class HomeController {
     showMessage('Nota eliminada');
   }
 
-  void shareApp() {
+  void shareApp() async {
     Share.share(
-        'Markdown editor, editor de markdown simple de utilizar, sin anuncios '
-        'https://github.com/manuelduarte077/notepad');
+        'check out my website https://github.com/manuelduarte077/notepad',
+        subject: 'Look what I made!');
   }
 
   final Uri _url = Uri.parse('https://github.com/manuelduarte077');
