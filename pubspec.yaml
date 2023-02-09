@@ -6,7 +6,7 @@ publish_to: "none"
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.18.4 <3.0.0"
+  sdk: ">=2.19.0 <3.0.0"
   flutter: 3.3.8
 
 dependencies:
@@ -15,14 +15,14 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_markdown: ^0.6.13
-  icons_launcher: ^1.1.7
+  icons_launcher: ^2.0.6
   rx_notifier: ^1.1.0
   share_plus: ^6.3.0
   sqflite: ^2.2.0+3
   url_launcher: ^6.1.7
 
 dev_dependencies:
-  flutter_lints: ^1.0.0
+  flutter_lints: ^2.0.1
   flutter_test:
     sdk: flutter
 
