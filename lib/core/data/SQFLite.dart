@@ -1,6 +1,7 @@
-import 'package:sqflite/sqflite.dart';
-import 'package:notepad/core/models/note.dart';
 import 'package:path/path.dart';
+import 'package:sqflite/sqflite.dart';
+
+import 'package:notepad/core/models/note.dart';
 
 class SQLFlite {
   List<Note> notes = [];

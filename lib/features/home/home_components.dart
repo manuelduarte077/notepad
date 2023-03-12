@@ -50,9 +50,10 @@ class HomeComponents {
         title: Text(
           note.title,
           style: const TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
-              textBaseline: TextBaseline.alphabetic),
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+            textBaseline: TextBaseline.alphabetic,
+          ),
         ),
         subtitle: Container(
           padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 8),

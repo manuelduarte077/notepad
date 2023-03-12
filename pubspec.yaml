@@ -16,7 +16,7 @@ dependencies:
     sdk: flutter
   flutter_markdown: ^0.6.13
   icons_launcher: ^2.0.6
-  rx_notifier: ^1.1.0
+  rx_notifier: ^2.2.0+2
   share_plus: ^6.3.0
   sqflite: ^2.2.0+3
   url_launcher: ^6.1.7

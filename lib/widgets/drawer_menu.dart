@@ -25,7 +25,6 @@ class DrawerMenu extends StatelessWidget {
               'Notepad',
               style: TextStyle(color: Colors.white, fontSize: 25),
             ),
-            decoration: BoxDecoration(color: Color(0xff111822)),
             currentAccountPicture: FlutterLogo(),
           ),
           const SizedBox(height: 20),
