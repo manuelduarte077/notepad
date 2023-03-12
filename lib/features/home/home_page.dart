@@ -26,17 +26,17 @@ class _HomeState extends State<Home> with HomeComponents {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xff111822),
       appBar: AppBar(
         elevation: 0,
-        backgroundColor: const Color(0xff111822),
-        title: const Text('Notepad', style: TextStyle(color: Colors.white)),
-        centerTitle: true,
+        title: const Text(
+          'Notepad',
+          style: TextStyle(color: Colors.black),
+        ),
         actions: [
           RxBuilder(
             builder: (_) => IconButton(
               tooltip: 'Ordenar',
-              icon: Icon(_controller.iconOrder.value, color: Colors.white),
+              icon: Icon(_controller.iconOrder.value, color: Colors.black),
               onPressed: _controller.orderList,
             ),
           ),
@@ -67,7 +67,6 @@ class _HomeState extends State<Home> with HomeComponents {
       floatingActionButton: FloatingActionButton(
         onPressed: () => _controller.createNote(context: context),
         child: const Icon(Icons.create_outlined),
-        backgroundColor: Colors.deepPurple,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );

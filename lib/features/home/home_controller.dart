@@ -29,15 +29,17 @@ class HomeController {
   void createNote({required BuildContext context}) {
     Navigator.push(
       context,
-      MaterialPageRoute(builder: (context) => CreateNoteActivity()),
+      MaterialPageRoute(
+        builder: (context) => const CreateNoteActivity(),
+      ),
     ).then((value) {
       getNotesFromDatabase();
     });
   }
 
   void showNote({required BuildContext context, required int id}) {
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => ShowNoteActivity(id)));
+    Navigator.push(context,
+        MaterialPageRoute(builder: (context) => ShowNoteActivity(noteId: id)));
   }
 
   void editNote({required BuildContext context, required int id}) async {

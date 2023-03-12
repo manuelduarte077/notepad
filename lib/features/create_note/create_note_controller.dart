@@ -55,7 +55,7 @@ class CreateNoteController {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) => ShowNoteActivity(noteId!),
+          builder: (context) => ShowNoteActivity(noteId: noteId!),
         ),
       );
     }

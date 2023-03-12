@@ -10,6 +10,9 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       builder: Asuka.builder,
+      theme: ThemeData.light(
+        useMaterial3: true,
+      ),
       debugShowCheckedModeBanner: false,
       home: const SplashScreen(),
     );

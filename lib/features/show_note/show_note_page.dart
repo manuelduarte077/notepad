@@ -1,14 +1,17 @@
-import 'package:flutter/services.dart';
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-
-import 'package:rx_notifier/rx_notifier.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:rx_notifier/rx_notifier.dart';
 
 import 'package:notepad/features/show_note/show_note_controller.dart';
 
 class ShowNoteActivity extends StatefulWidget {
   int noteId;
-  ShowNoteActivity(this.noteId, {Key? key}) : super(key: key);
+  ShowNoteActivity({
+    Key? key,
+    required this.noteId,
+  }) : super(key: key);
 
   @override
   _ShowNoteActivityState createState() => _ShowNoteActivityState();
@@ -28,8 +31,9 @@ class _ShowNoteActivityState extends State<ShowNoteActivity> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: RxBuilder(builder: (_) => Text(_controller.note.value.title)),
-        backgroundColor: const Color(0xff111822),
+        title: RxBuilder(
+          builder: (_) => Text(_controller.note.value.title),
+        ),
         elevation: 0,
         systemOverlayStyle: SystemUiOverlayStyle.light,
       ),

@@ -6,8 +6,9 @@ import 'package:notepad/features/create_note/create_note_controller.dart';
 import 'package:notepad/features/create_note/create_note_components.dart';
 
 class CreateNoteActivity extends StatefulWidget {
-  int? id;
-  CreateNoteActivity({Key? key, this.id}) : super(key: key);
+  final int? id;
+  const CreateNoteActivity({Key? key, this.id}) : super(key: key);
+
   @override
   _CreateNoteActivityState createState() => _CreateNoteActivityState();
 }
@@ -31,14 +32,12 @@ class _CreateNoteActivityState extends State<CreateNoteActivity>
         title: RxBuilder(
           builder: (_) => Text(_controller.titleText.value),
         ),
-        backgroundColor: Colors.blueGrey[900],
         elevation: 0,
         systemOverlayStyle: SystemUiOverlayStyle.light,
       ),
-      body: Container(
+      body: SizedBox(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        color: Colors.blueGrey[900],
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(16),
           child: Column(
@@ -59,9 +58,11 @@ class _CreateNoteActivityState extends State<CreateNoteActivity>
         ),
       ),
       floatingActionButton: FloatingActionButton.extended(
-        icon: const Icon(Icons.code),
-        label: const Text('Preview'),
-        backgroundColor: Colors.indigo[900],
+        icon: const Icon(Icons.preview_outlined),
+        label: const Text(
+          'Preview',
+          style: TextStyle(fontSize: 16),
+        ),
         onPressed: () {
           _controller.viewMarkdown(context: context);
         },
