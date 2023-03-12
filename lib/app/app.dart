@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:asuka/asuka.dart';
-
-import 'package:notepad/features/splash/splash_screen.dart';
+import 'package:notepad/responsive/desktop_scaffold.dart';
+import 'package:notepad/responsive/mobile_scaffold.dart';
+import 'package:notepad/responsive/responsive_layout.dart';
+import 'package:notepad/responsive/tablet_scaffold.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
@@ -14,7 +16,11 @@ class App extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: const SplashScreen(),
+      home: const ResponsiveLayout(
+        mobileLayout: MobileScaffold(),
+        tabletLayout: TabletScaffold(),
+        desktopLayout: DesktopScaffold(),
+      ),
     );
   }
 }
