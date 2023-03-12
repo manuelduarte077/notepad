@@ -2,9 +2,10 @@ import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:rx_notifier/rx_notifier.dart';
 
-import 'package:notepad/widgets/widgets.dart';
 import 'package:notepad/features/home/home_controller.dart';
 import 'package:notepad/features/home/home_components.dart';
+
+import '../../widgets/drawer_menu.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -14,6 +15,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> with HomeComponents {
+  final _key = GlobalKey<ScaffoldState>();
+
   late HomeController _controller;
 
   @override
@@ -30,20 +33,18 @@ class _HomeState extends State<Home> with HomeComponents {
         elevation: 0,
         title: const Text(
           'Notepad',
-          style: TextStyle(color: Colors.black),
         ),
         actions: [
           RxBuilder(
             builder: (_) => IconButton(
               tooltip: 'Ordenar',
-              icon: Icon(_controller.iconOrder.value, color: Colors.black),
+              icon: Icon(_controller.iconOrder.value),
               onPressed: _controller.orderList,
             ),
           ),
         ],
         systemOverlayStyle: SystemUiOverlayStyle.light,
       ),
-      drawer: DrawerMenu(controller: _controller),
       body: RxBuilder(
         builder: (_) {
           return ListView.builder(
