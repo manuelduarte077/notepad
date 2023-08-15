@@ -1,5 +1,5 @@
+import 'package:asuka/asuka.dart';
 import 'package:flutter/material.dart';
-import 'package:asuka/asuka.dart' as asuka;
 import 'package:rx_notifier/rx_notifier.dart';
 
 import 'package:notepad/core/data/SQFLite.dart';
@@ -37,7 +37,7 @@ class CreateNoteController {
   }
 
   void showMessage(String message) {
-    asuka.showSnackBar(
+    Asuka.showSnackBar(
       SnackBar(
         content: Text(message),
         duration: const Duration(seconds: 1),
