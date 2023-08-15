@@ -45,7 +45,7 @@ class SQLFlite {
     if (orderDefault == true) {
       order = ' ORDER BY id DESC;';
     }
-    String sql = "SELECT * FROM note" + order;
+    String sql = 'SELECT * FROM note$order';
 
     List notes = await db.rawQuery(sql);
     List<Note> responseNotes = [];
@@ -60,7 +60,7 @@ class SQLFlite {
   getNoteOfID(int id) async {
     Database db = await _openDataBase();
 
-    String sql = "SELECT * FROM note where id = $id";
+    String sql = 'SELECT * FROM note where id = $id';
     List notes = await db.rawQuery(sql);
 
     List<Note> responseNotes = [];
@@ -73,7 +73,7 @@ class SQLFlite {
 
   deleteNoteOfID(int id) async {
     Database db = await _openDataBase();
-    String sql = "DELETE FROM note where id = $id";
+    String sql = 'DELETE FROM note where id = $id';
     await db.delete('note', where: 'id = ?', whereArgs: [id]);
   }
 
