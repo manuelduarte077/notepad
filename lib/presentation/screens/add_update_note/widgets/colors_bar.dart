@@ -71,7 +71,7 @@ class _ColorBox extends StatelessWidget {
             ),
             child: isSelected
                 ? const Icon(
-                    FeatherIcons.check,
+                    Icons.check,
                     color: AppColors.white,
                     size: 36,
                   )

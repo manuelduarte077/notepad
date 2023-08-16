@@ -2,7 +2,7 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:notepad/domain/model/note.dart';
-import 'package:notepad/presentation/components/components.dart';
+
 import 'package:notepad/presentation/theme/colors.dart';
 import 'package:notepad/presentation/theme/spacing.dart';
 import 'package:notepad/presentation/theme/typography.dart';
@@ -85,7 +85,7 @@ class NoteCard extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Icon(
-                        FeatherIcons.check,
+                        Icons.check,
                         color: note.color,
                         size: 20,
                       ),

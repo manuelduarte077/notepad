@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+
 import 'package:notepad/common/constants.dart';
 import 'package:notepad/common/extension/map_index.dart';
+
 import 'package:notepad/presentation/components/components.dart';
 import 'package:notepad/presentation/theme/colors.dart';
 import 'package:notepad/presentation/theme/spacing.dart';
@@ -14,7 +16,7 @@ class NoteAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.autoImplementLeading = true,
     this.title,
     this.actions,
-    this.systemUiOverlayStyle = SystemUiOverlayStyle.light,
+    this.systemUiOverlayStyle = SystemUiOverlayStyle.dark,
   }) : super(key: key);
 
   final bool autoImplementLeading;
@@ -28,7 +30,7 @@ class NoteAppBar extends StatelessWidget implements PreferredSizeWidget {
       value: systemUiOverlayStyle,
       child: Theme(
         data: Theme.of(context).copyWith(
-          iconTheme: const IconThemeData(color: AppColors.title),
+          iconTheme: const IconThemeData(color: AppColors.white),
           brightness: Brightness.light,
         ),
         child: Container(
@@ -40,7 +42,7 @@ class NoteAppBar extends StatelessWidget implements PreferredSizeWidget {
               children: [
                 if (autoImplementLeading)
                   AppButton(
-                    child: const Icon(FeatherIcons.chevronLeft),
+                    child: const Icon(Icons.arrow_back),
                     onPressed: () => context.router.pop(),
                   ),
                 (title != null)
@@ -48,7 +50,7 @@ class NoteAppBar extends StatelessWidget implements PreferredSizeWidget {
                         child: Text(
                           title!,
                           style: AppTypography.headline1
-                              .copyWith(color: AppColors.title),
+                              .copyWith(color: AppColors.white),
                         ),
                       )
                     : const Spacer(),

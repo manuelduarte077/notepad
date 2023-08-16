@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'package:notepad/common/constants.dart';
 import 'package:notepad/common/extension/random.dart';
 import 'package:notepad/domain/model/note.dart';
+
 import 'package:notepad/presentation/components/components.dart';
 import 'package:notepad/presentation/theme/spacing.dart';
 import 'package:notepad/presentation/theme/typography.dart';
@@ -39,13 +41,13 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
             actions: state.whenOrNull(
               success: (note) => [
                 AppButton(
-                  child: const Icon(FeatherIcons.edit),
+                  child: const Icon(Icons.edit),
                   onPressed: () {
                     context.router.push(AddUpdateNoteRoute(note: note));
                   },
                 ),
                 AppButton(
-                  child: const Icon(FeatherIcons.trash2),
+                  child: const Icon(Icons.delete),
                   onPressed: () {
                     context
                         .read<NoteActionBloc>()

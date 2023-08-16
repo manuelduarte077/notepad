@@ -4,11 +4,14 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+
 import 'package:notepad/common/constants.dart';
 import 'package:notepad/common/extension/build_context.dart';
 import 'package:notepad/common/strings.dart';
+
 import 'package:notepad/domain/database/database.dart';
 import 'package:notepad/domain/model/note.dart';
+
 import 'package:notepad/presentation/components/components.dart';
 import 'package:notepad/presentation/screens/add_update_note/bloc/add_update_bloc.dart';
 import 'package:notepad/presentation/theme/colors.dart';
@@ -40,7 +43,7 @@ class HomeScreen extends StatelessWidget {
                             .copyWith(color: AppColors.white),
                       ),
                       const SizedBox(width: AppSpacings.xl),
-                      const Icon(FeatherIcons.trash2),
+                      const Icon(Icons.delete),
                     ],
                   ),
                   onPressed: () {
@@ -50,7 +53,7 @@ class HomeScreen extends StatelessWidget {
                   },
                 ),
                 AppButton(
-                  child: const Icon(FeatherIcons.x),
+                  child: const Icon(Icons.close),
                   onPressed: () {
                     context
                         .read<MultipleDeleteBloc>()
@@ -67,7 +70,7 @@ class HomeScreen extends StatelessWidget {
         onPressed: () {
           context.router.push(AddUpdateNoteRoute());
         },
-        child: const Icon(FeatherIcons.plus),
+        child: const Icon(Icons.add),
       ).animate(delay: animationDuration).fadeIn().slideX(begin: 1),
 
       //* Show available notes list

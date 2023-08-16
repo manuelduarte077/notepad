@@ -18,7 +18,7 @@ class _AddTodoTile extends StatelessWidget {
         title: Row(
           children: [
             const Icon(
-              FeatherIcons.plusCircle,
+              Icons.add,
               size: 18,
               color: AppColors.title,
             ),
@@ -95,7 +95,7 @@ class _TodoFieldTileState extends State<_TodoFieldTile> {
       trailing: IconButton(
         iconSize: 18,
         icon: const Icon(
-          FeatherIcons.trash2,
+          Icons.delete,
           color: Colors.black87,
         ),
         onPressed: widget.onRemoved,
@@ -131,14 +131,18 @@ class _BuildTodoListField extends StatelessWidget {
                     );
               },
               onRemoved: () {
-                context.read<AddUpdateFormBloc>().add(AddUpdateFormEvent.deleteTodo(todo.id!));
+                context
+                    .read<AddUpdateFormBloc>()
+                    .add(AddUpdateFormEvent.deleteTodo(todo.id!));
               },
             );
           },
         ),
         _AddTodoTile(
           onAdd: () {
-            context.read<AddUpdateFormBloc>().add(const AddUpdateFormEvent.addEmptyTodo());
+            context
+                .read<AddUpdateFormBloc>()
+                .add(const AddUpdateFormEvent.addEmptyTodo());
           },
         ),
       ],
