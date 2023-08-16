@@ -5,32 +5,27 @@ import 'colors.dart';
 
 class AppTheme {
   static ThemeData light = ThemeData(
-    useMaterial3: true,
-    primaryColor: AppColors.primary,
-
+    scaffoldBackgroundColor: const Color(0xff252525),
     appBarTheme: AppBarTheme(
+      backgroundColor: AppColors.white,
       centerTitle: false,
       elevation: 0,
-      // titleTextStyle: GoogleFonts.redHatDisplay(
-      //   fontSize: 16,
-      //   fontWeight: FontWeight.bold,
-      //   color: AppColors.title,
-      // ),
+      titleTextStyle: GoogleFonts.redHatDisplay(
+        fontSize: 17,
+        fontWeight: FontWeight.bold,
+        color: AppColors.title,
+      ),
       iconTheme: const IconThemeData(color: AppColors.title),
     ),
-    // colorScheme: ColorScheme.fromSwatch().copyWith(
-    //   secondary: AppColors.primary,
-    //   primary: AppColors.primary,
-    // ),
-
-    /// TextSelection
+    colorScheme: ColorScheme.fromSwatch().copyWith(
+      secondary: AppColors.primary,
+      primary: AppColors.primary,
+    ),
     textSelectionTheme: const TextSelectionThemeData(
       cursorColor: Color(0xff252525),
       selectionHandleColor: Color(0xff252525),
       selectionColor: Colors.black26,
     ),
-
-    /// Checkbox
     checkboxTheme: CheckboxThemeData(
       fillColor: MaterialStateProperty.all(const Color(0xff252525)),
       shape: const RoundedRectangleBorder(
