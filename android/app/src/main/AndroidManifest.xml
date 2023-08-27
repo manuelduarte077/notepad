@@ -9,7 +9,8 @@
 
     <!-- Provide required visibility configuration for API level 30 and above -->
     <queries>
-        <intent>å
+        <!-- <intent>å -->
+        <intent>
         <action android:name="android.intent.action.VIEW" />
         <data android:scheme="https" />
         </intent>
@@ -27,6 +28,7 @@
         android:label="notepad"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+        
         <activity
             android:name=".MainActivity"
             android:exported="true"

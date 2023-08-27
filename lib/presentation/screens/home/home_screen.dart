@@ -29,7 +29,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: NoteAppBar(
-        systemUiOverlayStyle: SystemUiOverlayStyle.light,
+        systemUiOverlayStyle: SystemUiOverlayStyle.dark,
         autoImplementLeading: false,
         title: StringConstants.homeAppBarTitle,
         actions: context.watch<MultipleDeleteBloc>().state.mapOrNull(

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:notepad/common/strings.dart';
 import 'package:notepad/di/di.dart';
+import 'package:notepad/presentation/theme/theme.dart';
 
 import 'routes/routes.dart';
-import 'theme/theme.dart';
 
 export 'screens/screens.dart';
 
