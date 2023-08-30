@@ -65,12 +65,17 @@ class HomeScreen extends StatelessWidget {
       ),
 
       //* add new note button
-      floatingActionButton: FloatingActionButton(
+      floatingActionButton: FloatingActionButton.extended(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(AppSpacings.xl),
+        ),
+        elevation: 10,
+        label: const Text('Add note'),
+        icon: const Icon(Icons.add),
         tooltip: 'Add note',
         onPressed: () {
           context.router.push(AddUpdateNoteRoute());
         },
-        child: const Icon(Icons.add),
       ).animate(delay: animationDuration).fadeIn().slideX(begin: 1),
 
       //* Show available notes list
