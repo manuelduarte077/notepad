@@ -1,8 +1,8 @@
 class StringConstants {
-  static const String appName = 'NoteApp';
+  static const String appName = 'NotedUp';
 
   //* Home Screen
-  static const String homeAppBarTitle = 'Notes';
+  static const String homeAppBarTitle = 'NotedUp';
 
   //* Add/Update Screen
   static const String titlePlaceholder = 'Title';
