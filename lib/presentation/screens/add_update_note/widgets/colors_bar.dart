@@ -65,14 +65,11 @@ class _ColorBox extends StatelessWidget {
             height: 40,
             width: 40,
             margin: const EdgeInsets.all(AppSpacings.s),
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              color: color,
-            ),
+            decoration: BoxDecoration(shape: BoxShape.circle, color: color),
             child: isSelected
                 ? const Icon(
                     Icons.check,
-                    color: AppColors.white,
+                    color: AppColors.title,
                     size: 36,
                   )
                 : null,

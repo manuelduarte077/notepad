@@ -26,7 +26,7 @@ class _BuildTitleField extends StatelessWidget {
           ),
         TextField(
           controller: _titleController,
-          style: AppTypography.headline1,
+          style: AppTypography.headline3,
           decoration: const InputDecoration(
             border: InputBorder.none,
             contentPadding: EdgeInsets.zero,
