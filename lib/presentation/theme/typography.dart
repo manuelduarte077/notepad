@@ -55,7 +55,7 @@ class AppTypography {
   static final TextStyle buttonLink = GoogleFonts.redHatDisplay(
     fontWeight: FontWeight.w600,
     fontSize: 13,
-    color: AppColors.title,
+    color: AppColors.white,
   );
 
   static final TextStyle textButton = GoogleFonts.redHatDisplay(

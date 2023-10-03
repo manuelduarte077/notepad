@@ -38,10 +38,8 @@ class AppTheme {
   );
 
   static ThemeData light = ThemeData(
-    scaffoldBackgroundColor: AppColors.white,
+    useMaterial3: true,
     appBarTheme: AppBarTheme(
-      backgroundColor: AppColors.white,
-      foregroundColor: AppColors.title,
       actionsIconTheme: const IconThemeData(color: AppColors.white),
       centerTitle: false,
       elevation: 0,
@@ -52,11 +50,8 @@ class AppTheme {
       ),
       iconTheme: const IconThemeData(color: AppColors.title),
     ),
+    fontFamily: GoogleFonts.redHatDisplay().fontFamily,
     iconTheme: const IconThemeData(color: AppColors.white),
-    colorScheme: ColorScheme.fromSwatch().copyWith(
-      secondary: AppColors.primary,
-      primary: AppColors.primary,
-    ),
     textSelectionTheme: const TextSelectionThemeData(
       cursorColor: AppColors.primary,
       selectionHandleColor: AppColors.primary,

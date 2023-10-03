@@ -42,7 +42,7 @@ class NoteAppBar extends StatelessWidget implements PreferredSizeWidget {
               (title != null)
                   ? Expanded(
                       child: Text(
-                        title!,
+                        title ?? '',
                         style: AppTypography.headline1,
                       ),
                     )

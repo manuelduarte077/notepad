@@ -70,8 +70,8 @@ class HomeScreen extends StatelessWidget {
           borderRadius: BorderRadius.circular(AppSpacings.xl),
         ),
         elevation: 10,
-        label: const Text('Add note'),
-        icon: const Icon(Icons.add),
+        label: Text('Add note', style: AppTypography.headline6),
+        icon: const Icon(Icons.add, size: 24),
         tooltip: 'Add note',
         onPressed: () {
           context.router.push(AddUpdateNoteRoute());

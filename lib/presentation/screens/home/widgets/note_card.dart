@@ -51,7 +51,7 @@ class NoteCard extends StatelessWidget {
                     child: AutoSizeText(
                       note.title ?? '',
                       presetFontSizes: const [16, 14, 12, 10, 8],
-                      textScaleFactor: 2,
+                      textScaleFactor: 1,
                       softWrap: true,
                       style: AppTypography.headline6,
                       group: AutoSizeGroup(),

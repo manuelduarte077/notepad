@@ -25,7 +25,8 @@
     </queries>
 
    <application
-        android:label="notepad"
+        android:label="NotedUp"
+    
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         

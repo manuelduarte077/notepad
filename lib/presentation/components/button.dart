@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:notepad/common/constants.dart';
-import 'package:notepad/presentation/theme/colors.dart';
 import 'package:notepad/presentation/theme/spacing.dart';
 import 'package:notepad/presentation/theme/typography.dart';
 
@@ -19,7 +18,7 @@ class AppButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTextStyle(
-      style: AppTypography.buttonLink.copyWith(color: AppColors.white),
+      style: AppTypography.buttonLink,
       child: GestureDetector(
         onTap: onPressed,
         child: AnimatedSwitcher(
