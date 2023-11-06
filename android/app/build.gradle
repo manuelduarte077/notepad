@@ -46,8 +46,8 @@ android {
         applicationId "com.example.notepad"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode flutterVersionCode.toInteger()
-        versionName flutterVersionName
+        versionCode 1
+        versionName 1.0.0
     }
 
     buildTypes {
