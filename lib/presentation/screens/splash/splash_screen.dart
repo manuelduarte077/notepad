@@ -10,7 +10,7 @@ import 'package:notepad/presentation/theme/colors.dart';
 import 'package:notepad/presentation/theme/typography.dart';
 
 class SplashScreen extends StatefulWidget {
-  const SplashScreen({Key? key}) : super(key: key);
+  const SplashScreen({super.key});
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();

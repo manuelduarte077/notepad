@@ -5,11 +5,11 @@ import 'package:notepad/presentation/theme/typography.dart';
 
 class AppButton extends StatelessWidget {
   const AppButton({
-    Key? key,
+    super.key,
     required this.child,
     required this.onPressed,
     this.isLoading = false,
-  }) : super(key: key);
+  });
 
   final Widget? child;
   final VoidCallback? onPressed;

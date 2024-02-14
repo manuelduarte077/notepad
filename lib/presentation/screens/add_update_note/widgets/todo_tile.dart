@@ -2,9 +2,8 @@ part of '../add_update_note_screen.dart';
 
 class _AddTodoTile extends StatelessWidget {
   const _AddTodoTile({
-    Key? key,
     required this.onAdd,
-  }) : super(key: key);
+  });
 
   final VoidCallback? onAdd;
 
@@ -38,11 +37,10 @@ class _AddTodoTile extends StatelessWidget {
 //* Todo list tile
 class _TodoFieldTile extends StatefulWidget {
   const _TodoFieldTile({
-    Key? key,
     this.value,
     required this.onChanged,
     required this.onRemoved,
-  }) : super(key: key);
+  });
 
   final String? value;
   final Function(String value) onChanged;
@@ -105,7 +103,7 @@ class _TodoFieldTileState extends State<_TodoFieldTile> {
 }
 
 class _BuildTodoListField extends StatelessWidget {
-  const _BuildTodoListField({Key? key, required this.state}) : super(key: key);
+  const _BuildTodoListField({required this.state});
   final AddUpdateFormState state;
 
   @override

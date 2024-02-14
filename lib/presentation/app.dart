@@ -8,7 +8,7 @@ import 'routes/routes.dart';
 export 'screens/screens.dart';
 
 class App extends StatelessWidget {
-  const App({Key? key}) : super(key: key);
+  const App({super.key});
 
   AppRouter get _router => getIt<AppRouter>();
 
