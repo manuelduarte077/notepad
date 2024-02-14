@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:notepad/common/constants.dart';
-import 'package:notepad/data/dto/note_dto.dart';
-import 'package:notepad/observer.dart';
+import 'package:notedup/common/constants.dart';
+import 'package:notedup/data/dto/note_dto.dart';
+import 'package:notedup/observer.dart';
 
 import 'di/di.dart';
 import 'presentation/app.dart';

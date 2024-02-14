@@ -89,13 +89,13 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "com.wondertech" "\0"
-            VALUE "FileDescription", "notepad" "\0"
+            VALUE "CompanyName", "OutdatedGuy" "\0"
+            VALUE "FileDescription", "Package Rename Demo" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "notepad" "\0"
-            VALUE "LegalCopyright", "Copyright (C) 2024 com.wondertech. All rights reserved." "\0"
-            VALUE "OriginalFilename", "notepad.exe" "\0"
-            VALUE "ProductName", "notepad" "\0"
+            VALUE "InternalName", "Package Rename Demo" "\0"
+            VALUE "LegalCopyright", "Copyright ©️ 2024 Wondertech. All rights reserved." "\0"
+            VALUE "OriginalFilename", "notedup-win32.exe" "\0"
+            VALUE "ProductName", "Package Rename Demo" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

@@ -1,9 +1,9 @@
 import 'dart:ui' show Color;
 
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:notepad/common/constants.dart';
-import 'package:notepad/common/extension/string.dart';
-import 'package:notepad/domain/model/note.dart';
+import 'package:notedup/common/constants.dart';
+import 'package:notedup/common/extension/string.dart';
+import 'package:notedup/domain/model/note.dart';
 
 part 'note_dto.g.dart';
 

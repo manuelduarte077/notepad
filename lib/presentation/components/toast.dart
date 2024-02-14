@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:notepad/presentation/routes/routes.dart';
-import 'package:notepad/presentation/theme/colors.dart';
-import 'package:notepad/presentation/theme/typography.dart';
+import 'package:notedup/presentation/routes/routes.dart';
+import 'package:notedup/presentation/theme/colors.dart';
+import 'package:notedup/presentation/theme/typography.dart';
 
-export 'package:notepad/di/di.dart';
-export 'package:notepad/presentation/routes/routes.dart';
+export 'package:notedup/di/di.dart';
+export 'package:notedup/presentation/routes/routes.dart';
 
 extension ContextEx on BuildContext {
   void showToast(

@@ -1,4 +1,4 @@
-package com.example.notepad
+package dev.wondertech.notedup
 
 import io.flutter.embedding.android.FlutterActivity
 
