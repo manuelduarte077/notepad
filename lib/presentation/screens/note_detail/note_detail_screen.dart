@@ -13,7 +13,7 @@ import 'bloc/action/note_action_bloc.dart';
 import 'bloc/detail/note_detail_bloc.dart';
 
 class NoteDetailScreen extends StatefulWidget {
-  const NoteDetailScreen({Key? key, required this.noteId}) : super(key: key);
+  const NoteDetailScreen({super.key, required this.noteId});
   final String noteId;
 
   @override
@@ -70,9 +70,8 @@ class _NoteDetailScreenState extends State<NoteDetailScreen> {
 
 class _LoadedView extends StatelessWidget {
   const _LoadedView({
-    Key? key,
     required this.note,
-  }) : super(key: key);
+  });
 
   final Note note;
 
@@ -115,7 +114,7 @@ class _LoadedView extends StatelessWidget {
 }
 
 class _BuildTodoList extends StatelessWidget {
-  const _BuildTodoList({Key? key, required this.todoList}) : super(key: key);
+  const _BuildTodoList({required this.todoList});
   final List<Todo> todoList;
 
   @override
