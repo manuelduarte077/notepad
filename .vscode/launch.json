@@ -5,18 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "notepad",
+            "name": "notedup",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "notepad (profile mode)",
+            "name": "notedup (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "notepad (release mode)",
+            "name": "notedup (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"

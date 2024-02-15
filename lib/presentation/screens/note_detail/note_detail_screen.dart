@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:notepad/common/constants.dart';
-import 'package:notepad/common/extension/random.dart';
-import 'package:notepad/domain/model/note.dart';
+import 'package:notedup/common/constants.dart';
+import 'package:notedup/common/extension/random.dart';
+import 'package:notedup/domain/model/note.dart';
 
-import 'package:notepad/presentation/components/components.dart';
-import 'package:notepad/presentation/theme/spacing.dart';
-import 'package:notepad/presentation/theme/typography.dart';
+import 'package:notedup/presentation/components/components.dart';
+import 'package:notedup/presentation/theme/spacing.dart';
+import 'package:notedup/presentation/theme/typography.dart';
 
 import 'bloc/action/note_action_bloc.dart';
 import 'bloc/detail/note_detail_bloc.dart';

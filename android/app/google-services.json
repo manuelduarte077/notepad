@@ -1,15 +1,15 @@
 {
   "project_info": {
     "project_number": "455982573353",
-    "project_id": "notepad-flutter-fire",
-    "storage_bucket": "notepad-flutter-fire.appspot.com"
+    "project_id": "notedup-flutter-fire",
+    "storage_bucket": "notedup-flutter-fire.appspot.com"
   },
   "client": [
     {
       "client_info": {
         "mobilesdk_app_id": "1:455982573353:android:d29df9ea4685612d027938",
         "android_client_info": {
-          "package_name": "com.example.notepad"
+          "package_name": "com.example.notedup"
         }
       },
       "oauth_client": [

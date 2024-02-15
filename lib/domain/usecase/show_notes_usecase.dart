@@ -1,12 +1,12 @@
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 
-import 'package:notepad/common/exception.dart';
+import 'package:notedup/common/exception.dart';
 
-import 'package:notepad/domain/model/error.dart';
-import 'package:notepad/domain/model/note.dart';
+import 'package:notedup/domain/model/error.dart';
+import 'package:notedup/domain/model/note.dart';
 
-import 'package:notepad/domain/repository/note_repository.dart';
+import 'package:notedup/domain/repository/note_repository.dart';
 
 @injectable
 class ShowAllNotesUsecase {

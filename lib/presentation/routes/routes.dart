@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:notepad/presentation/screens/screens.dart';
+import 'package:notedup/presentation/screens/screens.dart';
 
 export 'package:auto_route/auto_route.dart';
 export 'routes.gr.dart';

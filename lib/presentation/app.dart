@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:notepad/common/strings.dart';
-import 'package:notepad/di/di.dart';
-import 'package:notepad/presentation/theme/theme.dart';
+import 'package:notedup/common/strings.dart';
+import 'package:notedup/di/di.dart';
+import 'package:notedup/presentation/theme/theme.dart';
 
 import 'routes/routes.dart';
 

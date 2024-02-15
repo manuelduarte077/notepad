@@ -1,10 +1,10 @@
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
-import 'package:notepad/common/extension/string.dart';
-import 'package:notepad/data/dto/note_dto.dart';
-import 'package:notepad/domain/model/error.dart';
-import 'package:notepad/domain/model/note.dart';
-import 'package:notepad/domain/repository/note_repository.dart';
+import 'package:notedup/common/extension/string.dart';
+import 'package:notedup/data/dto/note_dto.dart';
+import 'package:notedup/domain/model/error.dart';
+import 'package:notedup/domain/model/note.dart';
+import 'package:notedup/domain/repository/note_repository.dart';
 
 @injectable
 class UpdateNoteUsecase {
