@@ -7,29 +7,29 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
-import 'package:notepad/data/local/database.dart' as _i5;
-import 'package:notepad/data/repository/note_repository.dart' as _i7;
-import 'package:notepad/di/module.dart' as _i21;
-import 'package:notepad/domain/database/database.dart' as _i4;
-import 'package:notepad/domain/repository/note_repository.dart' as _i6;
-import 'package:notepad/domain/usecase/add_note_usecase.dart' as _i10;
-import 'package:notepad/domain/usecase/delete_multiple_notes.dart' as _i14;
-import 'package:notepad/domain/usecase/delete_note_usecase.dart' as _i15;
-import 'package:notepad/domain/usecase/get_note_usecase.dart' as _i16;
-import 'package:notepad/domain/usecase/show_notes_usecase.dart' as _i8;
-import 'package:notepad/domain/usecase/update_note_usecase.dart' as _i9;
-import 'package:notepad/domain/usecase/usecase.dart' as _i12;
-import 'package:notepad/presentation/routes/routes.dart' as _i3;
-import 'package:notepad/presentation/screens/add_update_note/bloc/add_update_bloc.dart'
+import 'package:notedup/data/local/database.dart' as _i5;
+import 'package:notedup/data/repository/note_repository.dart' as _i7;
+import 'package:notedup/di/module.dart' as _i21;
+import 'package:notedup/domain/database/database.dart' as _i4;
+import 'package:notedup/domain/repository/note_repository.dart' as _i6;
+import 'package:notedup/domain/usecase/add_note_usecase.dart' as _i10;
+import 'package:notedup/domain/usecase/delete_multiple_notes.dart' as _i14;
+import 'package:notedup/domain/usecase/delete_note_usecase.dart' as _i15;
+import 'package:notedup/domain/usecase/get_note_usecase.dart' as _i16;
+import 'package:notedup/domain/usecase/show_notes_usecase.dart' as _i8;
+import 'package:notedup/domain/usecase/update_note_usecase.dart' as _i9;
+import 'package:notedup/domain/usecase/usecase.dart' as _i12;
+import 'package:notedup/presentation/routes/routes.dart' as _i3;
+import 'package:notedup/presentation/screens/add_update_note/bloc/add_update_bloc.dart'
     as _i11;
-import 'package:notepad/presentation/screens/add_update_note/bloc/add_update_form/add_update_form_bloc.dart'
+import 'package:notedup/presentation/screens/add_update_note/bloc/add_update_form/add_update_form_bloc.dart'
     as _i13;
-import 'package:notepad/presentation/screens/home/bloc/home_bloc.dart' as _i17;
-import 'package:notepad/presentation/screens/home/bloc/multiple_delete/multiple_delete_bloc.dart'
+import 'package:notedup/presentation/screens/home/bloc/home_bloc.dart' as _i17;
+import 'package:notedup/presentation/screens/home/bloc/multiple_delete/multiple_delete_bloc.dart'
     as _i18;
-import 'package:notepad/presentation/screens/note_detail/bloc/action/note_action_bloc.dart'
+import 'package:notedup/presentation/screens/note_detail/bloc/action/note_action_bloc.dart'
     as _i19;
-import 'package:notepad/presentation/screens/note_detail/bloc/detail/note_detail_bloc.dart'
+import 'package:notedup/presentation/screens/note_detail/bloc/detail/note_detail_bloc.dart'
     as _i20; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars

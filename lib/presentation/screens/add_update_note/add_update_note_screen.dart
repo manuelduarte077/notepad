@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:notepad/common/constants.dart';
-import 'package:notepad/common/extension/random.dart';
-import 'package:notepad/common/strings.dart';
-import 'package:notepad/domain/model/note.dart';
-import 'package:notepad/presentation/components/components.dart';
-import 'package:notepad/presentation/theme/colors.dart';
-import 'package:notepad/presentation/theme/spacing.dart';
-import 'package:notepad/presentation/theme/typography.dart';
+import 'package:notedup/common/constants.dart';
+import 'package:notedup/common/extension/random.dart';
+import 'package:notedup/common/strings.dart';
+import 'package:notedup/domain/model/note.dart';
+import 'package:notedup/presentation/components/components.dart';
+import 'package:notedup/presentation/theme/colors.dart';
+import 'package:notedup/presentation/theme/spacing.dart';
+import 'package:notedup/presentation/theme/typography.dart';
 
 import 'bloc/add_update_bloc.dart';
 import 'bloc/add_update_form/add_update_form_bloc.dart';

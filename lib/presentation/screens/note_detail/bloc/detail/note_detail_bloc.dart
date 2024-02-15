@@ -1,9 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:notepad/domain/model/note.dart';
-import 'package:notepad/domain/usecase/usecase.dart';
-import 'package:notepad/presentation/components/toast.dart';
+import 'package:notedup/domain/model/note.dart';
+import 'package:notedup/domain/usecase/usecase.dart';
+import 'package:notedup/presentation/components/toast.dart';
 
 part 'note_detail_bloc.freezed.dart';
 part 'note_detail_event.dart';

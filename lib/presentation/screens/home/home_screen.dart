@@ -5,18 +5,18 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
-import 'package:notepad/common/constants.dart';
-import 'package:notepad/common/extension/build_context.dart';
-import 'package:notepad/common/strings.dart';
+import 'package:notedup/common/constants.dart';
+import 'package:notedup/common/extension/build_context.dart';
+import 'package:notedup/common/strings.dart';
 
-import 'package:notepad/domain/database/database.dart';
-import 'package:notepad/domain/model/note.dart';
+import 'package:notedup/domain/database/database.dart';
+import 'package:notedup/domain/model/note.dart';
 
-import 'package:notepad/presentation/components/components.dart';
-import 'package:notepad/presentation/screens/add_update_note/bloc/add_update_bloc.dart';
-import 'package:notepad/presentation/theme/colors.dart';
-import 'package:notepad/presentation/theme/spacing.dart';
-import 'package:notepad/presentation/theme/typography.dart';
+import 'package:notedup/presentation/components/components.dart';
+import 'package:notedup/presentation/screens/add_update_note/bloc/add_update_bloc.dart';
+import 'package:notedup/presentation/theme/colors.dart';
+import 'package:notedup/presentation/theme/spacing.dart';
+import 'package:notedup/presentation/theme/typography.dart';
 
 import 'bloc/home_bloc.dart';
 import 'bloc/multiple_delete/multiple_delete_bloc.dart';

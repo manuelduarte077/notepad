@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
-import 'package:notepad/common/constants.dart';
-import 'package:notepad/common/strings.dart';
+import 'package:notedup/common/constants.dart';
+import 'package:notedup/common/strings.dart';
 
-import 'package:notepad/presentation/routes/routes.dart';
-import 'package:notepad/presentation/theme/colors.dart';
-import 'package:notepad/presentation/theme/typography.dart';
+import 'package:notedup/presentation/routes/routes.dart';
+import 'package:notedup/presentation/theme/colors.dart';
+import 'package:notedup/presentation/theme/typography.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

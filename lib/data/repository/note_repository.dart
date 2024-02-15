@@ -1,7 +1,7 @@
 import 'package:injectable/injectable.dart';
-import 'package:notepad/data/dto/note_dto.dart';
-import 'package:notepad/domain/database/database.dart';
-import 'package:notepad/domain/repository/note_repository.dart';
+import 'package:notedup/data/dto/note_dto.dart';
+import 'package:notedup/domain/database/database.dart';
+import 'package:notedup/domain/repository/note_repository.dart';
 
 @LazySingleton(as: NoteRepository)
 class NoteRepositoryImplementation implements NoteRepository {

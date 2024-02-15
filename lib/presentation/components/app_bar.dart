@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 
-import 'package:notepad/common/constants.dart';
-import 'package:notepad/common/extension/map_index.dart';
+import 'package:notedup/common/constants.dart';
+import 'package:notedup/common/extension/map_index.dart';
 
-import 'package:notepad/presentation/components/components.dart';
-import 'package:notepad/presentation/theme/spacing.dart';
-import 'package:notepad/presentation/theme/typography.dart';
+import 'package:notedup/presentation/components/components.dart';
+import 'package:notedup/presentation/theme/spacing.dart';
+import 'package:notedup/presentation/theme/typography.dart';
 
 class NoteAppBar extends StatelessWidget implements PreferredSizeWidget {
   const NoteAppBar({

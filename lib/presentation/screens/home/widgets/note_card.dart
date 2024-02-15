@@ -1,11 +1,11 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:notepad/domain/model/note.dart';
+import 'package:notedup/domain/model/note.dart';
 
-import 'package:notepad/presentation/theme/colors.dart';
-import 'package:notepad/presentation/theme/spacing.dart';
-import 'package:notepad/presentation/theme/typography.dart';
+import 'package:notedup/presentation/theme/colors.dart';
+import 'package:notedup/presentation/theme/spacing.dart';
+import 'package:notedup/presentation/theme/typography.dart';
 
 class NoteCard extends StatelessWidget {
   const NoteCard({

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:notepad/common/constants.dart';
-import 'package:notepad/presentation/theme/spacing.dart';
-import 'package:notepad/presentation/theme/typography.dart';
+import 'package:notedup/common/constants.dart';
+import 'package:notedup/presentation/theme/spacing.dart';
+import 'package:notedup/presentation/theme/typography.dart';
 
 class AppButton extends StatelessWidget {
   const AppButton({

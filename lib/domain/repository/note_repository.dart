@@ -1,4 +1,4 @@
-import 'package:notepad/data/dto/note_dto.dart';
+import 'package:notedup/data/dto/note_dto.dart';
 
 abstract class NoteRepository {
   List<NoteDto> getAllNotes();
