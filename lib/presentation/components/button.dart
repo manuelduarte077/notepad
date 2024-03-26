@@ -37,7 +37,15 @@ class AppButton extends StatelessWidget {
             ),
             child: Center(
               key: ValueKey(isLoading),
-              child: isLoading ? const Text(' Saving.. ') : child,
+              child: isLoading
+                  ? Text(
+                      ' Saving.. ',
+                      style: AppTypography.buttonLink.copyWith(
+                        color: Colors.white,
+                        fontSize: 14,
+                      ),
+                    )
+                  : child,
             ),
           ),
         ),

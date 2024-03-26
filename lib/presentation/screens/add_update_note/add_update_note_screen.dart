@@ -113,9 +113,15 @@ class _BuildForm extends StatelessWidget {
                   orElse: () => false,
                   saving: (_) => true,
                 ),
-            child: const Padding(
-              padding: EdgeInsets.symmetric(horizontal: AppSpacings.m),
-              child: Text('Save'),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: AppSpacings.m),
+              child: Text(
+                'Save',
+                style: AppTypography.title.copyWith(
+                  color: Colors.white,
+                  fontSize: 16,
+                ),
+              ),
             ),
             onPressed: () => _addOrUpdateNote(context),
           ),
