@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:macos_ui/macos_ui.dart';
 import 'package:notedup/common/strings.dart';
 import 'package:notedup/di/di.dart';
 
@@ -15,18 +16,31 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Platform.isIOS
-        ? CupertinoApp.router(
-            routerDelegate: getIt<AppRouter>().delegate(),
-            routeInformationParser: getIt<AppRouter>().defaultRouteParser(),
-            title: StringConstants.appName,
-            debugShowCheckedModeBanner: false,
-          )
-        : MaterialApp.router(
-            routerConfig: getIt<AppRouter>().config(),
-            title: StringConstants.appName,
-            debugShowCheckedModeBanner: false,
-            theme: AppTheme.light,
-          );
+    final routerDelegate = getIt<AppRouter>().delegate();
+    final routeInformationParser = getIt<AppRouter>().defaultRouteParser();
+
+    if (Platform.isIOS) {
+      return CupertinoApp.router(
+        routerDelegate: routerDelegate,
+        routeInformationParser: routeInformationParser,
+        title: StringConstants.appName,
+        debugShowCheckedModeBanner: false,
+      );
+    } else if (Platform.isMacOS) {
+      return MacosApp.router(
+        routerDelegate: routerDelegate,
+        routeInformationParser: routeInformationParser,
+        title: StringConstants.appName,
+        debugShowCheckedModeBanner: false,
+        theme: MacosThemeData.light(),
+      );
+    } else {
+      return MaterialApp.router(
+        routerConfig: getIt<AppRouter>().config(),
+        title: StringConstants.appName,
+        debugShowCheckedModeBanner: false,
+        theme: AppTheme.light,
+      );
+    }
   }
 }
