@@ -16,6 +16,7 @@ part 'widgets/colors_bar.dart';
 part 'widgets/text_forms.dart';
 part 'widgets/todo_tile.dart';
 
+@RoutePage()
 class AddUpdateNoteScreen extends StatefulWidget {
   const AddUpdateNoteScreen({super.key, this.note});
   final Note? note;

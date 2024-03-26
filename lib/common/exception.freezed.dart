@@ -12,7 +12,7 @@ part of 'exception.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$NoteAppException {
@@ -81,25 +81,25 @@ class _$NoteAppExceptionCopyWithImpl<$Res, $Val extends NoteAppException>
 }
 
 /// @nodoc
-abstract class _$$NoRecordsExceptionCopyWith<$Res> {
-  factory _$$NoRecordsExceptionCopyWith(_$NoRecordsException value,
-          $Res Function(_$NoRecordsException) then) =
-      __$$NoRecordsExceptionCopyWithImpl<$Res>;
+abstract class _$$NoRecordsExceptionImplCopyWith<$Res> {
+  factory _$$NoRecordsExceptionImplCopyWith(_$NoRecordsExceptionImpl value,
+          $Res Function(_$NoRecordsExceptionImpl) then) =
+      __$$NoRecordsExceptionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$NoRecordsExceptionCopyWithImpl<$Res>
-    extends _$NoteAppExceptionCopyWithImpl<$Res, _$NoRecordsException>
-    implements _$$NoRecordsExceptionCopyWith<$Res> {
-  __$$NoRecordsExceptionCopyWithImpl(
-      _$NoRecordsException _value, $Res Function(_$NoRecordsException) _then)
+class __$$NoRecordsExceptionImplCopyWithImpl<$Res>
+    extends _$NoteAppExceptionCopyWithImpl<$Res, _$NoRecordsExceptionImpl>
+    implements _$$NoRecordsExceptionImplCopyWith<$Res> {
+  __$$NoRecordsExceptionImplCopyWithImpl(_$NoRecordsExceptionImpl _value,
+      $Res Function(_$NoRecordsExceptionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$NoRecordsException implements NoRecordsException {
-  _$NoRecordsException();
+class _$NoRecordsExceptionImpl implements NoRecordsException {
+  _$NoRecordsExceptionImpl();
 
   @override
   String toString() {
@@ -107,9 +107,9 @@ class _$NoRecordsException implements NoRecordsException {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$NoRecordsException);
+        (other.runtimeType == runtimeType && other is _$NoRecordsExceptionImpl);
   }
 
   @override
@@ -185,24 +185,24 @@ class _$NoRecordsException implements NoRecordsException {
 }
 
 abstract class NoRecordsException implements NoteAppException {
-  factory NoRecordsException() = _$NoRecordsException;
+  factory NoRecordsException() = _$NoRecordsExceptionImpl;
 }
 
 /// @nodoc
-abstract class _$$EmptyExceptionCopyWith<$Res> {
-  factory _$$EmptyExceptionCopyWith(
-          _$EmptyException value, $Res Function(_$EmptyException) then) =
-      __$$EmptyExceptionCopyWithImpl<$Res>;
+abstract class _$$EmptyExceptionImplCopyWith<$Res> {
+  factory _$$EmptyExceptionImplCopyWith(_$EmptyExceptionImpl value,
+          $Res Function(_$EmptyExceptionImpl) then) =
+      __$$EmptyExceptionImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String message});
 }
 
 /// @nodoc
-class __$$EmptyExceptionCopyWithImpl<$Res>
-    extends _$NoteAppExceptionCopyWithImpl<$Res, _$EmptyException>
-    implements _$$EmptyExceptionCopyWith<$Res> {
-  __$$EmptyExceptionCopyWithImpl(
-      _$EmptyException _value, $Res Function(_$EmptyException) _then)
+class __$$EmptyExceptionImplCopyWithImpl<$Res>
+    extends _$NoteAppExceptionCopyWithImpl<$Res, _$EmptyExceptionImpl>
+    implements _$$EmptyExceptionImplCopyWith<$Res> {
+  __$$EmptyExceptionImplCopyWithImpl(
+      _$EmptyExceptionImpl _value, $Res Function(_$EmptyExceptionImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -210,7 +210,7 @@ class __$$EmptyExceptionCopyWithImpl<$Res>
   $Res call({
     Object? message = null,
   }) {
-    return _then(_$EmptyException(
+    return _then(_$EmptyExceptionImpl(
       null == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -221,8 +221,8 @@ class __$$EmptyExceptionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$EmptyException implements EmptyException {
-  _$EmptyException(this.message);
+class _$EmptyExceptionImpl implements EmptyException {
+  _$EmptyExceptionImpl(this.message);
 
   @override
   final String message;
@@ -233,10 +233,10 @@ class _$EmptyException implements EmptyException {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$EmptyException &&
+            other is _$EmptyExceptionImpl &&
             (identical(other.message, message) || other.message == message));
   }
 
@@ -246,8 +246,9 @@ class _$EmptyException implements EmptyException {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$EmptyExceptionCopyWith<_$EmptyException> get copyWith =>
-      __$$EmptyExceptionCopyWithImpl<_$EmptyException>(this, _$identity);
+  _$$EmptyExceptionImplCopyWith<_$EmptyExceptionImpl> get copyWith =>
+      __$$EmptyExceptionImplCopyWithImpl<_$EmptyExceptionImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -319,34 +320,36 @@ class _$EmptyException implements EmptyException {
 }
 
 abstract class EmptyException implements NoteAppException {
-  factory EmptyException(final String message) = _$EmptyException;
+  factory EmptyException(final String message) = _$EmptyExceptionImpl;
 
   String get message;
   @JsonKey(ignore: true)
-  _$$EmptyExceptionCopyWith<_$EmptyException> get copyWith =>
+  _$$EmptyExceptionImplCopyWith<_$EmptyExceptionImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$FailedToParseExceptionCopyWith<$Res> {
-  factory _$$FailedToParseExceptionCopyWith(_$FailedToParseException value,
-          $Res Function(_$FailedToParseException) then) =
-      __$$FailedToParseExceptionCopyWithImpl<$Res>;
+abstract class _$$FailedToParseExceptionImplCopyWith<$Res> {
+  factory _$$FailedToParseExceptionImplCopyWith(
+          _$FailedToParseExceptionImpl value,
+          $Res Function(_$FailedToParseExceptionImpl) then) =
+      __$$FailedToParseExceptionImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$FailedToParseExceptionCopyWithImpl<$Res>
-    extends _$NoteAppExceptionCopyWithImpl<$Res, _$FailedToParseException>
-    implements _$$FailedToParseExceptionCopyWith<$Res> {
-  __$$FailedToParseExceptionCopyWithImpl(_$FailedToParseException _value,
-      $Res Function(_$FailedToParseException) _then)
+class __$$FailedToParseExceptionImplCopyWithImpl<$Res>
+    extends _$NoteAppExceptionCopyWithImpl<$Res, _$FailedToParseExceptionImpl>
+    implements _$$FailedToParseExceptionImplCopyWith<$Res> {
+  __$$FailedToParseExceptionImplCopyWithImpl(
+      _$FailedToParseExceptionImpl _value,
+      $Res Function(_$FailedToParseExceptionImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$FailedToParseException implements FailedToParseException {
-  _$FailedToParseException();
+class _$FailedToParseExceptionImpl implements FailedToParseException {
+  _$FailedToParseExceptionImpl();
 
   @override
   String toString() {
@@ -354,9 +357,10 @@ class _$FailedToParseException implements FailedToParseException {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$FailedToParseException);
+        (other.runtimeType == runtimeType &&
+            other is _$FailedToParseExceptionImpl);
   }
 
   @override
@@ -432,5 +436,5 @@ class _$FailedToParseException implements FailedToParseException {
 }
 
 abstract class FailedToParseException implements NoteAppException {
-  factory FailedToParseException() = _$FailedToParseException;
+  factory FailedToParseException() = _$FailedToParseExceptionImpl;
 }
