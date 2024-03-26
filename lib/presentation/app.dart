@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:notedup/common/strings.dart';
 import 'package:notedup/di/di.dart';
@@ -12,11 +15,18 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      routerConfig: getIt<AppRouter>().config(),
-      title: StringConstants.appName,
-      debugShowCheckedModeBanner: false,
-      theme: AppTheme.light,
-    );
+    return Platform.isIOS
+        ? CupertinoApp.router(
+            routerDelegate: getIt<AppRouter>().delegate(),
+            routeInformationParser: getIt<AppRouter>().defaultRouteParser(),
+            title: StringConstants.appName,
+            debugShowCheckedModeBanner: false,
+          )
+        : MaterialApp.router(
+            routerConfig: getIt<AppRouter>().config(),
+            title: StringConstants.appName,
+            debugShowCheckedModeBanner: false,
+            theme: AppTheme.light,
+          );
   }
 }
