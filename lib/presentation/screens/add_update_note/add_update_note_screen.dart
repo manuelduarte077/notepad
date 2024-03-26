@@ -16,6 +16,7 @@ part 'widgets/colors_bar.dart';
 part 'widgets/text_forms.dart';
 part 'widgets/todo_tile.dart';
 
+@RoutePage()
 class AddUpdateNoteScreen extends StatefulWidget {
   const AddUpdateNoteScreen({super.key, this.note});
   final Note? note;
@@ -112,9 +113,15 @@ class _BuildForm extends StatelessWidget {
                   orElse: () => false,
                   saving: (_) => true,
                 ),
-            child: const Padding(
-              padding: EdgeInsets.symmetric(horizontal: AppSpacings.m),
-              child: Text('Save'),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: AppSpacings.m),
+              child: Text(
+                'Save',
+                style: AppTypography.title.copyWith(
+                  color: Colors.white,
+                  fontSize: 16,
+                ),
+              ),
             ),
             onPressed: () => _addOrUpdateNote(context),
           ),

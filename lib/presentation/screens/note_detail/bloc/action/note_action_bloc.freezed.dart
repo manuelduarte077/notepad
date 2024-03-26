@@ -12,7 +12,7 @@ part of 'note_action_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$NoteActionEvent {
@@ -89,22 +89,22 @@ class _$NoteActionEventCopyWithImpl<$Res, $Val extends NoteActionEvent>
 }
 
 /// @nodoc
-abstract class _$$_DeleteNoteCopyWith<$Res>
+abstract class _$$DeleteNoteImplCopyWith<$Res>
     implements $NoteActionEventCopyWith<$Res> {
-  factory _$$_DeleteNoteCopyWith(
-          _$_DeleteNote value, $Res Function(_$_DeleteNote) then) =
-      __$$_DeleteNoteCopyWithImpl<$Res>;
+  factory _$$DeleteNoteImplCopyWith(
+          _$DeleteNoteImpl value, $Res Function(_$DeleteNoteImpl) then) =
+      __$$DeleteNoteImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String noteId});
 }
 
 /// @nodoc
-class __$$_DeleteNoteCopyWithImpl<$Res>
-    extends _$NoteActionEventCopyWithImpl<$Res, _$_DeleteNote>
-    implements _$$_DeleteNoteCopyWith<$Res> {
-  __$$_DeleteNoteCopyWithImpl(
-      _$_DeleteNote _value, $Res Function(_$_DeleteNote) _then)
+class __$$DeleteNoteImplCopyWithImpl<$Res>
+    extends _$NoteActionEventCopyWithImpl<$Res, _$DeleteNoteImpl>
+    implements _$$DeleteNoteImplCopyWith<$Res> {
+  __$$DeleteNoteImplCopyWithImpl(
+      _$DeleteNoteImpl _value, $Res Function(_$DeleteNoteImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -112,7 +112,7 @@ class __$$_DeleteNoteCopyWithImpl<$Res>
   $Res call({
     Object? noteId = null,
   }) {
-    return _then(_$_DeleteNote(
+    return _then(_$DeleteNoteImpl(
       null == noteId
           ? _value.noteId
           : noteId // ignore: cast_nullable_to_non_nullable
@@ -123,8 +123,8 @@ class __$$_DeleteNoteCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_DeleteNote implements _DeleteNote {
-  const _$_DeleteNote(this.noteId);
+class _$DeleteNoteImpl implements _DeleteNote {
+  const _$DeleteNoteImpl(this.noteId);
 
   @override
   final String noteId;
@@ -135,10 +135,10 @@ class _$_DeleteNote implements _DeleteNote {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DeleteNote &&
+            other is _$DeleteNoteImpl &&
             (identical(other.noteId, noteId) || other.noteId == noteId));
   }
 
@@ -148,8 +148,8 @@ class _$_DeleteNote implements _DeleteNote {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DeleteNoteCopyWith<_$_DeleteNote> get copyWith =>
-      __$$_DeleteNoteCopyWithImpl<_$_DeleteNote>(this, _$identity);
+  _$$DeleteNoteImplCopyWith<_$DeleteNoteImpl> get copyWith =>
+      __$$DeleteNoteImplCopyWithImpl<_$DeleteNoteImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -209,13 +209,13 @@ class _$_DeleteNote implements _DeleteNote {
 }
 
 abstract class _DeleteNote implements NoteActionEvent {
-  const factory _DeleteNote(final String noteId) = _$_DeleteNote;
+  const factory _DeleteNote(final String noteId) = _$DeleteNoteImpl;
 
   @override
   String get noteId;
   @override
   @JsonKey(ignore: true)
-  _$$_DeleteNoteCopyWith<_$_DeleteNote> get copyWith =>
+  _$$DeleteNoteImplCopyWith<_$DeleteNoteImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -286,24 +286,25 @@ class _$NoteActionStateCopyWithImpl<$Res, $Val extends NoteActionState>
 }
 
 /// @nodoc
-abstract class _$$_InitialCopyWith<$Res> {
-  factory _$$_InitialCopyWith(
-          _$_Initial value, $Res Function(_$_Initial) then) =
-      __$$_InitialCopyWithImpl<$Res>;
+abstract class _$$InitialImplCopyWith<$Res> {
+  factory _$$InitialImplCopyWith(
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res>
-    extends _$NoteActionStateCopyWithImpl<$Res, _$_Initial>
-    implements _$$_InitialCopyWith<$Res> {
-  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+class __$$InitialImplCopyWithImpl<$Res>
+    extends _$NoteActionStateCopyWithImpl<$Res, _$InitialImpl>
+    implements _$$InitialImplCopyWith<$Res> {
+  __$$InitialImplCopyWithImpl(
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Initial implements _Initial {
-  const _$_Initial();
+class _$InitialImpl implements _Initial {
+  const _$InitialImpl();
 
   @override
   String toString() {
@@ -311,9 +312,9 @@ class _$_Initial implements _Initial {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Initial);
+        (other.runtimeType == runtimeType && other is _$InitialImpl);
   }
 
   @override
@@ -389,29 +390,29 @@ class _$_Initial implements _Initial {
 }
 
 abstract class _Initial implements NoteActionState {
-  const factory _Initial() = _$_Initial;
+  const factory _Initial() = _$InitialImpl;
 }
 
 /// @nodoc
-abstract class _$$_DeleteSuccessCopyWith<$Res> {
-  factory _$$_DeleteSuccessCopyWith(
-          _$_DeleteSuccess value, $Res Function(_$_DeleteSuccess) then) =
-      __$$_DeleteSuccessCopyWithImpl<$Res>;
+abstract class _$$DeleteSuccessImplCopyWith<$Res> {
+  factory _$$DeleteSuccessImplCopyWith(
+          _$DeleteSuccessImpl value, $Res Function(_$DeleteSuccessImpl) then) =
+      __$$DeleteSuccessImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_DeleteSuccessCopyWithImpl<$Res>
-    extends _$NoteActionStateCopyWithImpl<$Res, _$_DeleteSuccess>
-    implements _$$_DeleteSuccessCopyWith<$Res> {
-  __$$_DeleteSuccessCopyWithImpl(
-      _$_DeleteSuccess _value, $Res Function(_$_DeleteSuccess) _then)
+class __$$DeleteSuccessImplCopyWithImpl<$Res>
+    extends _$NoteActionStateCopyWithImpl<$Res, _$DeleteSuccessImpl>
+    implements _$$DeleteSuccessImplCopyWith<$Res> {
+  __$$DeleteSuccessImplCopyWithImpl(
+      _$DeleteSuccessImpl _value, $Res Function(_$DeleteSuccessImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_DeleteSuccess implements _DeleteSuccess {
-  const _$_DeleteSuccess();
+class _$DeleteSuccessImpl implements _DeleteSuccess {
+  const _$DeleteSuccessImpl();
 
   @override
   String toString() {
@@ -419,9 +420,9 @@ class _$_DeleteSuccess implements _DeleteSuccess {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_DeleteSuccess);
+        (other.runtimeType == runtimeType && other is _$DeleteSuccessImpl);
   }
 
   @override
@@ -497,24 +498,24 @@ class _$_DeleteSuccess implements _DeleteSuccess {
 }
 
 abstract class _DeleteSuccess implements NoteActionState {
-  const factory _DeleteSuccess() = _$_DeleteSuccess;
+  const factory _DeleteSuccess() = _$DeleteSuccessImpl;
 }
 
 /// @nodoc
-abstract class _$$_DeleteFailureCopyWith<$Res> {
-  factory _$$_DeleteFailureCopyWith(
-          _$_DeleteFailure value, $Res Function(_$_DeleteFailure) then) =
-      __$$_DeleteFailureCopyWithImpl<$Res>;
+abstract class _$$DeleteFailureImplCopyWith<$Res> {
+  factory _$$DeleteFailureImplCopyWith(
+          _$DeleteFailureImpl value, $Res Function(_$DeleteFailureImpl) then) =
+      __$$DeleteFailureImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String? message});
 }
 
 /// @nodoc
-class __$$_DeleteFailureCopyWithImpl<$Res>
-    extends _$NoteActionStateCopyWithImpl<$Res, _$_DeleteFailure>
-    implements _$$_DeleteFailureCopyWith<$Res> {
-  __$$_DeleteFailureCopyWithImpl(
-      _$_DeleteFailure _value, $Res Function(_$_DeleteFailure) _then)
+class __$$DeleteFailureImplCopyWithImpl<$Res>
+    extends _$NoteActionStateCopyWithImpl<$Res, _$DeleteFailureImpl>
+    implements _$$DeleteFailureImplCopyWith<$Res> {
+  __$$DeleteFailureImplCopyWithImpl(
+      _$DeleteFailureImpl _value, $Res Function(_$DeleteFailureImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -522,7 +523,7 @@ class __$$_DeleteFailureCopyWithImpl<$Res>
   $Res call({
     Object? message = freezed,
   }) {
-    return _then(_$_DeleteFailure(
+    return _then(_$DeleteFailureImpl(
       message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -533,8 +534,8 @@ class __$$_DeleteFailureCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_DeleteFailure implements _DeleteFailure {
-  const _$_DeleteFailure({this.message});
+class _$DeleteFailureImpl implements _DeleteFailure {
+  const _$DeleteFailureImpl({this.message});
 
   @override
   final String? message;
@@ -545,10 +546,10 @@ class _$_DeleteFailure implements _DeleteFailure {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_DeleteFailure &&
+            other is _$DeleteFailureImpl &&
             (identical(other.message, message) || other.message == message));
   }
 
@@ -558,8 +559,8 @@ class _$_DeleteFailure implements _DeleteFailure {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_DeleteFailureCopyWith<_$_DeleteFailure> get copyWith =>
-      __$$_DeleteFailureCopyWithImpl<_$_DeleteFailure>(this, _$identity);
+  _$$DeleteFailureImplCopyWith<_$DeleteFailureImpl> get copyWith =>
+      __$$DeleteFailureImplCopyWithImpl<_$DeleteFailureImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -631,10 +632,10 @@ class _$_DeleteFailure implements _DeleteFailure {
 }
 
 abstract class _DeleteFailure implements NoteActionState {
-  const factory _DeleteFailure({final String? message}) = _$_DeleteFailure;
+  const factory _DeleteFailure({final String? message}) = _$DeleteFailureImpl;
 
   String? get message;
   @JsonKey(ignore: true)
-  _$$_DeleteFailureCopyWith<_$_DeleteFailure> get copyWith =>
+  _$$DeleteFailureImplCopyWith<_$DeleteFailureImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

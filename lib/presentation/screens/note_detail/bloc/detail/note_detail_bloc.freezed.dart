@@ -12,7 +12,7 @@ part of 'note_detail_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$NoteDetailEvent {
@@ -75,20 +75,20 @@ class _$NoteDetailEventCopyWithImpl<$Res, $Val extends NoteDetailEvent>
 }
 
 /// @nodoc
-abstract class _$$_ShowNoteCopyWith<$Res> {
-  factory _$$_ShowNoteCopyWith(
-          _$_ShowNote value, $Res Function(_$_ShowNote) then) =
-      __$$_ShowNoteCopyWithImpl<$Res>;
+abstract class _$$ShowNoteImplCopyWith<$Res> {
+  factory _$$ShowNoteImplCopyWith(
+          _$ShowNoteImpl value, $Res Function(_$ShowNoteImpl) then) =
+      __$$ShowNoteImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String noteId});
 }
 
 /// @nodoc
-class __$$_ShowNoteCopyWithImpl<$Res>
-    extends _$NoteDetailEventCopyWithImpl<$Res, _$_ShowNote>
-    implements _$$_ShowNoteCopyWith<$Res> {
-  __$$_ShowNoteCopyWithImpl(
-      _$_ShowNote _value, $Res Function(_$_ShowNote) _then)
+class __$$ShowNoteImplCopyWithImpl<$Res>
+    extends _$NoteDetailEventCopyWithImpl<$Res, _$ShowNoteImpl>
+    implements _$$ShowNoteImplCopyWith<$Res> {
+  __$$ShowNoteImplCopyWithImpl(
+      _$ShowNoteImpl _value, $Res Function(_$ShowNoteImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -96,7 +96,7 @@ class __$$_ShowNoteCopyWithImpl<$Res>
   $Res call({
     Object? noteId = null,
   }) {
-    return _then(_$_ShowNote(
+    return _then(_$ShowNoteImpl(
       null == noteId
           ? _value.noteId
           : noteId // ignore: cast_nullable_to_non_nullable
@@ -107,8 +107,8 @@ class __$$_ShowNoteCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ShowNote implements _ShowNote {
-  const _$_ShowNote(this.noteId);
+class _$ShowNoteImpl implements _ShowNote {
+  const _$ShowNoteImpl(this.noteId);
 
   @override
   final String noteId;
@@ -119,10 +119,10 @@ class _$_ShowNote implements _ShowNote {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ShowNote &&
+            other is _$ShowNoteImpl &&
             (identical(other.noteId, noteId) || other.noteId == noteId));
   }
 
@@ -132,8 +132,8 @@ class _$_ShowNote implements _ShowNote {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ShowNoteCopyWith<_$_ShowNote> get copyWith =>
-      __$$_ShowNoteCopyWithImpl<_$_ShowNote>(this, _$identity);
+  _$$ShowNoteImplCopyWith<_$ShowNoteImpl> get copyWith =>
+      __$$ShowNoteImplCopyWithImpl<_$ShowNoteImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -199,29 +199,29 @@ class _$_ShowNote implements _ShowNote {
 }
 
 abstract class _ShowNote implements NoteDetailEvent {
-  const factory _ShowNote(final String noteId) = _$_ShowNote;
+  const factory _ShowNote(final String noteId) = _$ShowNoteImpl;
 
   String get noteId;
   @JsonKey(ignore: true)
-  _$$_ShowNoteCopyWith<_$_ShowNote> get copyWith =>
+  _$$ShowNoteImplCopyWith<_$ShowNoteImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_ToggleTodoCheckboxCopyWith<$Res> {
-  factory _$$_ToggleTodoCheckboxCopyWith(_$_ToggleTodoCheckbox value,
-          $Res Function(_$_ToggleTodoCheckbox) then) =
-      __$$_ToggleTodoCheckboxCopyWithImpl<$Res>;
+abstract class _$$ToggleTodoCheckboxImplCopyWith<$Res> {
+  factory _$$ToggleTodoCheckboxImplCopyWith(_$ToggleTodoCheckboxImpl value,
+          $Res Function(_$ToggleTodoCheckboxImpl) then) =
+      __$$ToggleTodoCheckboxImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String todoId});
 }
 
 /// @nodoc
-class __$$_ToggleTodoCheckboxCopyWithImpl<$Res>
-    extends _$NoteDetailEventCopyWithImpl<$Res, _$_ToggleTodoCheckbox>
-    implements _$$_ToggleTodoCheckboxCopyWith<$Res> {
-  __$$_ToggleTodoCheckboxCopyWithImpl(
-      _$_ToggleTodoCheckbox _value, $Res Function(_$_ToggleTodoCheckbox) _then)
+class __$$ToggleTodoCheckboxImplCopyWithImpl<$Res>
+    extends _$NoteDetailEventCopyWithImpl<$Res, _$ToggleTodoCheckboxImpl>
+    implements _$$ToggleTodoCheckboxImplCopyWith<$Res> {
+  __$$ToggleTodoCheckboxImplCopyWithImpl(_$ToggleTodoCheckboxImpl _value,
+      $Res Function(_$ToggleTodoCheckboxImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -229,7 +229,7 @@ class __$$_ToggleTodoCheckboxCopyWithImpl<$Res>
   $Res call({
     Object? todoId = null,
   }) {
-    return _then(_$_ToggleTodoCheckbox(
+    return _then(_$ToggleTodoCheckboxImpl(
       null == todoId
           ? _value.todoId
           : todoId // ignore: cast_nullable_to_non_nullable
@@ -240,8 +240,8 @@ class __$$_ToggleTodoCheckboxCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ToggleTodoCheckbox implements _ToggleTodoCheckbox {
-  const _$_ToggleTodoCheckbox(this.todoId);
+class _$ToggleTodoCheckboxImpl implements _ToggleTodoCheckbox {
+  const _$ToggleTodoCheckboxImpl(this.todoId);
 
   @override
   final String todoId;
@@ -252,10 +252,10 @@ class _$_ToggleTodoCheckbox implements _ToggleTodoCheckbox {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ToggleTodoCheckbox &&
+            other is _$ToggleTodoCheckboxImpl &&
             (identical(other.todoId, todoId) || other.todoId == todoId));
   }
 
@@ -265,8 +265,8 @@ class _$_ToggleTodoCheckbox implements _ToggleTodoCheckbox {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ToggleTodoCheckboxCopyWith<_$_ToggleTodoCheckbox> get copyWith =>
-      __$$_ToggleTodoCheckboxCopyWithImpl<_$_ToggleTodoCheckbox>(
+  _$$ToggleTodoCheckboxImplCopyWith<_$ToggleTodoCheckboxImpl> get copyWith =>
+      __$$ToggleTodoCheckboxImplCopyWithImpl<_$ToggleTodoCheckboxImpl>(
           this, _$identity);
 
   @override
@@ -334,11 +334,11 @@ class _$_ToggleTodoCheckbox implements _ToggleTodoCheckbox {
 
 abstract class _ToggleTodoCheckbox implements NoteDetailEvent {
   const factory _ToggleTodoCheckbox(final String todoId) =
-      _$_ToggleTodoCheckbox;
+      _$ToggleTodoCheckboxImpl;
 
   String get todoId;
   @JsonKey(ignore: true)
-  _$$_ToggleTodoCheckboxCopyWith<_$_ToggleTodoCheckbox> get copyWith =>
+  _$$ToggleTodoCheckboxImplCopyWith<_$ToggleTodoCheckboxImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -415,24 +415,25 @@ class _$NoteDetailStateCopyWithImpl<$Res, $Val extends NoteDetailState>
 }
 
 /// @nodoc
-abstract class _$$_InitialCopyWith<$Res> {
-  factory _$$_InitialCopyWith(
-          _$_Initial value, $Res Function(_$_Initial) then) =
-      __$$_InitialCopyWithImpl<$Res>;
+abstract class _$$InitialImplCopyWith<$Res> {
+  factory _$$InitialImplCopyWith(
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res>
-    extends _$NoteDetailStateCopyWithImpl<$Res, _$_Initial>
-    implements _$$_InitialCopyWith<$Res> {
-  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+class __$$InitialImplCopyWithImpl<$Res>
+    extends _$NoteDetailStateCopyWithImpl<$Res, _$InitialImpl>
+    implements _$$InitialImplCopyWith<$Res> {
+  __$$InitialImplCopyWithImpl(
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Initial implements _Initial {
-  const _$_Initial();
+class _$InitialImpl implements _Initial {
+  const _$InitialImpl();
 
   @override
   String toString() {
@@ -440,9 +441,9 @@ class _$_Initial implements _Initial {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Initial);
+        (other.runtimeType == runtimeType && other is _$InitialImpl);
   }
 
   @override
@@ -524,28 +525,29 @@ class _$_Initial implements _Initial {
 }
 
 abstract class _Initial implements NoteDetailState {
-  const factory _Initial() = _$_Initial;
+  const factory _Initial() = _$InitialImpl;
 }
 
 /// @nodoc
-abstract class _$$_LoadingCopyWith<$Res> {
-  factory _$$_LoadingCopyWith(
-          _$_Loading value, $Res Function(_$_Loading) then) =
-      __$$_LoadingCopyWithImpl<$Res>;
+abstract class _$$LoadingImplCopyWith<$Res> {
+  factory _$$LoadingImplCopyWith(
+          _$LoadingImpl value, $Res Function(_$LoadingImpl) then) =
+      __$$LoadingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_LoadingCopyWithImpl<$Res>
-    extends _$NoteDetailStateCopyWithImpl<$Res, _$_Loading>
-    implements _$$_LoadingCopyWith<$Res> {
-  __$$_LoadingCopyWithImpl(_$_Loading _value, $Res Function(_$_Loading) _then)
+class __$$LoadingImplCopyWithImpl<$Res>
+    extends _$NoteDetailStateCopyWithImpl<$Res, _$LoadingImpl>
+    implements _$$LoadingImplCopyWith<$Res> {
+  __$$LoadingImplCopyWithImpl(
+      _$LoadingImpl _value, $Res Function(_$LoadingImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Loading implements _Loading {
-  const _$_Loading();
+class _$LoadingImpl implements _Loading {
+  const _$LoadingImpl();
 
   @override
   String toString() {
@@ -553,9 +555,9 @@ class _$_Loading implements _Loading {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Loading);
+        (other.runtimeType == runtimeType && other is _$LoadingImpl);
   }
 
   @override
@@ -637,13 +639,14 @@ class _$_Loading implements _Loading {
 }
 
 abstract class _Loading implements NoteDetailState {
-  const factory _Loading() = _$_Loading;
+  const factory _Loading() = _$LoadingImpl;
 }
 
 /// @nodoc
-abstract class _$$_LoadedCopyWith<$Res> {
-  factory _$$_LoadedCopyWith(_$_Loaded value, $Res Function(_$_Loaded) then) =
-      __$$_LoadedCopyWithImpl<$Res>;
+abstract class _$$LoadedImplCopyWith<$Res> {
+  factory _$$LoadedImplCopyWith(
+          _$LoadedImpl value, $Res Function(_$LoadedImpl) then) =
+      __$$LoadedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Note note});
 
@@ -651,10 +654,11 @@ abstract class _$$_LoadedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_LoadedCopyWithImpl<$Res>
-    extends _$NoteDetailStateCopyWithImpl<$Res, _$_Loaded>
-    implements _$$_LoadedCopyWith<$Res> {
-  __$$_LoadedCopyWithImpl(_$_Loaded _value, $Res Function(_$_Loaded) _then)
+class __$$LoadedImplCopyWithImpl<$Res>
+    extends _$NoteDetailStateCopyWithImpl<$Res, _$LoadedImpl>
+    implements _$$LoadedImplCopyWith<$Res> {
+  __$$LoadedImplCopyWithImpl(
+      _$LoadedImpl _value, $Res Function(_$LoadedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -662,7 +666,7 @@ class __$$_LoadedCopyWithImpl<$Res>
   $Res call({
     Object? note = null,
   }) {
-    return _then(_$_Loaded(
+    return _then(_$LoadedImpl(
       null == note
           ? _value.note
           : note // ignore: cast_nullable_to_non_nullable
@@ -681,8 +685,8 @@ class __$$_LoadedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Loaded implements _Loaded {
-  const _$_Loaded(this.note);
+class _$LoadedImpl implements _Loaded {
+  const _$LoadedImpl(this.note);
 
   @override
   final Note note;
@@ -693,10 +697,10 @@ class _$_Loaded implements _Loaded {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Loaded &&
+            other is _$LoadedImpl &&
             (identical(other.note, note) || other.note == note));
   }
 
@@ -706,8 +710,8 @@ class _$_Loaded implements _Loaded {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_LoadedCopyWith<_$_Loaded> get copyWith =>
-      __$$_LoadedCopyWithImpl<_$_Loaded>(this, _$identity);
+  _$$LoadedImplCopyWith<_$LoadedImpl> get copyWith =>
+      __$$LoadedImplCopyWithImpl<_$LoadedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -785,27 +789,29 @@ class _$_Loaded implements _Loaded {
 }
 
 abstract class _Loaded implements NoteDetailState {
-  const factory _Loaded(final Note note) = _$_Loaded;
+  const factory _Loaded(final Note note) = _$LoadedImpl;
 
   Note get note;
   @JsonKey(ignore: true)
-  _$$_LoadedCopyWith<_$_Loaded> get copyWith =>
+  _$$LoadedImplCopyWith<_$LoadedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_ErrorCopyWith<$Res> {
-  factory _$$_ErrorCopyWith(_$_Error value, $Res Function(_$_Error) then) =
-      __$$_ErrorCopyWithImpl<$Res>;
+abstract class _$$ErrorImplCopyWith<$Res> {
+  factory _$$ErrorImplCopyWith(
+          _$ErrorImpl value, $Res Function(_$ErrorImpl) then) =
+      __$$ErrorImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String? message});
 }
 
 /// @nodoc
-class __$$_ErrorCopyWithImpl<$Res>
-    extends _$NoteDetailStateCopyWithImpl<$Res, _$_Error>
-    implements _$$_ErrorCopyWith<$Res> {
-  __$$_ErrorCopyWithImpl(_$_Error _value, $Res Function(_$_Error) _then)
+class __$$ErrorImplCopyWithImpl<$Res>
+    extends _$NoteDetailStateCopyWithImpl<$Res, _$ErrorImpl>
+    implements _$$ErrorImplCopyWith<$Res> {
+  __$$ErrorImplCopyWithImpl(
+      _$ErrorImpl _value, $Res Function(_$ErrorImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -813,7 +819,7 @@ class __$$_ErrorCopyWithImpl<$Res>
   $Res call({
     Object? message = freezed,
   }) {
-    return _then(_$_Error(
+    return _then(_$ErrorImpl(
       message: freezed == message
           ? _value.message
           : message // ignore: cast_nullable_to_non_nullable
@@ -824,8 +830,8 @@ class __$$_ErrorCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Error implements _Error {
-  const _$_Error({this.message});
+class _$ErrorImpl implements _Error {
+  const _$ErrorImpl({this.message});
 
   @override
   final String? message;
@@ -836,10 +842,10 @@ class _$_Error implements _Error {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Error &&
+            other is _$ErrorImpl &&
             (identical(other.message, message) || other.message == message));
   }
 
@@ -849,8 +855,8 @@ class _$_Error implements _Error {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ErrorCopyWith<_$_Error> get copyWith =>
-      __$$_ErrorCopyWithImpl<_$_Error>(this, _$identity);
+  _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
+      __$$ErrorImplCopyWithImpl<_$ErrorImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -928,10 +934,10 @@ class _$_Error implements _Error {
 }
 
 abstract class _Error implements NoteDetailState {
-  const factory _Error({final String? message}) = _$_Error;
+  const factory _Error({final String? message}) = _$ErrorImpl;
 
   String? get message;
   @JsonKey(ignore: true)
-  _$$_ErrorCopyWith<_$_Error> get copyWith =>
+  _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
