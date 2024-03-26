@@ -12,7 +12,7 @@ part of 'note.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$Note {
@@ -91,9 +91,10 @@ class _$NoteCopyWithImpl<$Res, $Val extends Note>
 }
 
 /// @nodoc
-abstract class _$$_NoteCopyWith<$Res> implements $NoteCopyWith<$Res> {
-  factory _$$_NoteCopyWith(_$_Note value, $Res Function(_$_Note) then) =
-      __$$_NoteCopyWithImpl<$Res>;
+abstract class _$$NoteImplCopyWith<$Res> implements $NoteCopyWith<$Res> {
+  factory _$$NoteImplCopyWith(
+          _$NoteImpl value, $Res Function(_$NoteImpl) then) =
+      __$$NoteImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -106,9 +107,10 @@ abstract class _$$_NoteCopyWith<$Res> implements $NoteCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_NoteCopyWithImpl<$Res> extends _$NoteCopyWithImpl<$Res, _$_Note>
-    implements _$$_NoteCopyWith<$Res> {
-  __$$_NoteCopyWithImpl(_$_Note _value, $Res Function(_$_Note) _then)
+class __$$NoteImplCopyWithImpl<$Res>
+    extends _$NoteCopyWithImpl<$Res, _$NoteImpl>
+    implements _$$NoteImplCopyWith<$Res> {
+  __$$NoteImplCopyWithImpl(_$NoteImpl _value, $Res Function(_$NoteImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -121,7 +123,7 @@ class __$$_NoteCopyWithImpl<$Res> extends _$NoteCopyWithImpl<$Res, _$_Note>
     Object? dateTime = freezed,
     Object? todos = null,
   }) {
-    return _then(_$_Note(
+    return _then(_$NoteImpl(
       id: freezed == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -152,8 +154,8 @@ class __$$_NoteCopyWithImpl<$Res> extends _$NoteCopyWithImpl<$Res, _$_Note>
 
 /// @nodoc
 
-class _$_Note extends _Note {
-  _$_Note(
+class _$NoteImpl extends _Note {
+  _$NoteImpl(
       {this.id,
       this.title,
       this.description,
@@ -188,35 +190,29 @@ class _$_Note extends _Note {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Note &&
+            other is _$NoteImpl &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.description, description) ||
                 other.description == description) &&
-            const DeepCollectionEquality().equals(other.color, color) &&
+            (identical(other.color, color) || other.color == color) &&
             (identical(other.dateTime, dateTime) ||
                 other.dateTime == dateTime) &&
             const DeepCollectionEquality().equals(other._todos, _todos));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      id,
-      title,
-      description,
-      const DeepCollectionEquality().hash(color),
-      dateTime,
-      const DeepCollectionEquality().hash(_todos));
+  int get hashCode => Object.hash(runtimeType, id, title, description, color,
+      dateTime, const DeepCollectionEquality().hash(_todos));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_NoteCopyWith<_$_Note> get copyWith =>
-      __$$_NoteCopyWithImpl<_$_Note>(this, _$identity);
+  _$$NoteImplCopyWith<_$NoteImpl> get copyWith =>
+      __$$NoteImplCopyWithImpl<_$NoteImpl>(this, _$identity);
 }
 
 abstract class _Note extends Note {
@@ -226,7 +222,7 @@ abstract class _Note extends Note {
       final String? description,
       final Color? color,
       final DateTime? dateTime,
-      final List<Todo> todos}) = _$_Note;
+      final List<Todo> todos}) = _$NoteImpl;
   _Note._() : super._();
 
   @override
@@ -243,7 +239,8 @@ abstract class _Note extends Note {
   List<Todo> get todos;
   @override
   @JsonKey(ignore: true)
-  _$$_NoteCopyWith<_$_Note> get copyWith => throw _privateConstructorUsedError;
+  _$$NoteImplCopyWith<_$NoteImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -299,18 +296,20 @@ class _$TodoCopyWithImpl<$Res, $Val extends Todo>
 }
 
 /// @nodoc
-abstract class _$$_TodoCopyWith<$Res> implements $TodoCopyWith<$Res> {
-  factory _$$_TodoCopyWith(_$_Todo value, $Res Function(_$_Todo) then) =
-      __$$_TodoCopyWithImpl<$Res>;
+abstract class _$$TodoImplCopyWith<$Res> implements $TodoCopyWith<$Res> {
+  factory _$$TodoImplCopyWith(
+          _$TodoImpl value, $Res Function(_$TodoImpl) then) =
+      __$$TodoImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({bool completed, String? title, String? id});
 }
 
 /// @nodoc
-class __$$_TodoCopyWithImpl<$Res> extends _$TodoCopyWithImpl<$Res, _$_Todo>
-    implements _$$_TodoCopyWith<$Res> {
-  __$$_TodoCopyWithImpl(_$_Todo _value, $Res Function(_$_Todo) _then)
+class __$$TodoImplCopyWithImpl<$Res>
+    extends _$TodoCopyWithImpl<$Res, _$TodoImpl>
+    implements _$$TodoImplCopyWith<$Res> {
+  __$$TodoImplCopyWithImpl(_$TodoImpl _value, $Res Function(_$TodoImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -320,7 +319,7 @@ class __$$_TodoCopyWithImpl<$Res> extends _$TodoCopyWithImpl<$Res, _$_Todo>
     Object? title = freezed,
     Object? id = freezed,
   }) {
-    return _then(_$_Todo(
+    return _then(_$TodoImpl(
       completed: null == completed
           ? _value.completed
           : completed // ignore: cast_nullable_to_non_nullable
@@ -339,8 +338,8 @@ class __$$_TodoCopyWithImpl<$Res> extends _$TodoCopyWithImpl<$Res, _$_Todo>
 
 /// @nodoc
 
-class _$_Todo extends _Todo {
-  _$_Todo({this.completed = false, this.title, this.id}) : super._();
+class _$TodoImpl extends _Todo {
+  _$TodoImpl({this.completed = false, this.title, this.id}) : super._();
 
   @override
   @JsonKey()
@@ -356,10 +355,10 @@ class _$_Todo extends _Todo {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Todo &&
+            other is _$TodoImpl &&
             (identical(other.completed, completed) ||
                 other.completed == completed) &&
             (identical(other.title, title) || other.title == title) &&
@@ -372,13 +371,13 @@ class _$_Todo extends _Todo {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_TodoCopyWith<_$_Todo> get copyWith =>
-      __$$_TodoCopyWithImpl<_$_Todo>(this, _$identity);
+  _$$TodoImplCopyWith<_$TodoImpl> get copyWith =>
+      __$$TodoImplCopyWithImpl<_$TodoImpl>(this, _$identity);
 }
 
 abstract class _Todo extends Todo {
   factory _Todo({final bool completed, final String? title, final String? id}) =
-      _$_Todo;
+      _$TodoImpl;
   _Todo._() : super._();
 
   @override
@@ -389,5 +388,6 @@ abstract class _Todo extends Todo {
   String? get id;
   @override
   @JsonKey(ignore: true)
-  _$$_TodoCopyWith<_$_Todo> get copyWith => throw _privateConstructorUsedError;
+  _$$TodoImplCopyWith<_$TodoImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

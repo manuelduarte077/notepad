@@ -12,7 +12,7 @@ part of 'multiple_delete_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$MultipleDeleteEvent {
@@ -81,20 +81,20 @@ class _$MultipleDeleteEventCopyWithImpl<$Res, $Val extends MultipleDeleteEvent>
 }
 
 /// @nodoc
-abstract class _$$_ToggleSelectCopyWith<$Res> {
-  factory _$$_ToggleSelectCopyWith(
-          _$_ToggleSelect value, $Res Function(_$_ToggleSelect) then) =
-      __$$_ToggleSelectCopyWithImpl<$Res>;
+abstract class _$$ToggleSelectImplCopyWith<$Res> {
+  factory _$$ToggleSelectImplCopyWith(
+          _$ToggleSelectImpl value, $Res Function(_$ToggleSelectImpl) then) =
+      __$$ToggleSelectImplCopyWithImpl<$Res>;
   @useResult
   $Res call({String id});
 }
 
 /// @nodoc
-class __$$_ToggleSelectCopyWithImpl<$Res>
-    extends _$MultipleDeleteEventCopyWithImpl<$Res, _$_ToggleSelect>
-    implements _$$_ToggleSelectCopyWith<$Res> {
-  __$$_ToggleSelectCopyWithImpl(
-      _$_ToggleSelect _value, $Res Function(_$_ToggleSelect) _then)
+class __$$ToggleSelectImplCopyWithImpl<$Res>
+    extends _$MultipleDeleteEventCopyWithImpl<$Res, _$ToggleSelectImpl>
+    implements _$$ToggleSelectImplCopyWith<$Res> {
+  __$$ToggleSelectImplCopyWithImpl(
+      _$ToggleSelectImpl _value, $Res Function(_$ToggleSelectImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -102,7 +102,7 @@ class __$$_ToggleSelectCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
   }) {
-    return _then(_$_ToggleSelect(
+    return _then(_$ToggleSelectImpl(
       null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -113,8 +113,8 @@ class __$$_ToggleSelectCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_ToggleSelect implements _ToggleSelect {
-  const _$_ToggleSelect(this.id);
+class _$ToggleSelectImpl implements _ToggleSelect {
+  const _$ToggleSelectImpl(this.id);
 
   @override
   final String id;
@@ -125,10 +125,10 @@ class _$_ToggleSelect implements _ToggleSelect {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ToggleSelect &&
+            other is _$ToggleSelectImpl &&
             (identical(other.id, id) || other.id == id));
   }
 
@@ -138,8 +138,8 @@ class _$_ToggleSelect implements _ToggleSelect {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_ToggleSelectCopyWith<_$_ToggleSelect> get copyWith =>
-      __$$_ToggleSelectCopyWithImpl<_$_ToggleSelect>(this, _$identity);
+  _$$ToggleSelectImplCopyWith<_$ToggleSelectImpl> get copyWith =>
+      __$$ToggleSelectImplCopyWithImpl<_$ToggleSelectImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -211,32 +211,34 @@ class _$_ToggleSelect implements _ToggleSelect {
 }
 
 abstract class _ToggleSelect implements MultipleDeleteEvent {
-  const factory _ToggleSelect(final String id) = _$_ToggleSelect;
+  const factory _ToggleSelect(final String id) = _$ToggleSelectImpl;
 
   String get id;
   @JsonKey(ignore: true)
-  _$$_ToggleSelectCopyWith<_$_ToggleSelect> get copyWith =>
+  _$$ToggleSelectImplCopyWith<_$ToggleSelectImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_DeleteCopyWith<$Res> {
-  factory _$$_DeleteCopyWith(_$_Delete value, $Res Function(_$_Delete) then) =
-      __$$_DeleteCopyWithImpl<$Res>;
+abstract class _$$DeleteImplCopyWith<$Res> {
+  factory _$$DeleteImplCopyWith(
+          _$DeleteImpl value, $Res Function(_$DeleteImpl) then) =
+      __$$DeleteImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_DeleteCopyWithImpl<$Res>
-    extends _$MultipleDeleteEventCopyWithImpl<$Res, _$_Delete>
-    implements _$$_DeleteCopyWith<$Res> {
-  __$$_DeleteCopyWithImpl(_$_Delete _value, $Res Function(_$_Delete) _then)
+class __$$DeleteImplCopyWithImpl<$Res>
+    extends _$MultipleDeleteEventCopyWithImpl<$Res, _$DeleteImpl>
+    implements _$$DeleteImplCopyWith<$Res> {
+  __$$DeleteImplCopyWithImpl(
+      _$DeleteImpl _value, $Res Function(_$DeleteImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Delete implements _Delete {
-  const _$_Delete();
+class _$DeleteImpl implements _Delete {
+  const _$DeleteImpl();
 
   @override
   String toString() {
@@ -244,9 +246,9 @@ class _$_Delete implements _Delete {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Delete);
+        (other.runtimeType == runtimeType && other is _$DeleteImpl);
   }
 
   @override
@@ -322,29 +324,29 @@ class _$_Delete implements _Delete {
 }
 
 abstract class _Delete implements MultipleDeleteEvent {
-  const factory _Delete() = _$_Delete;
+  const factory _Delete() = _$DeleteImpl;
 }
 
 /// @nodoc
-abstract class _$$_ClearAllCopyWith<$Res> {
-  factory _$$_ClearAllCopyWith(
-          _$_ClearAll value, $Res Function(_$_ClearAll) then) =
-      __$$_ClearAllCopyWithImpl<$Res>;
+abstract class _$$ClearAllImplCopyWith<$Res> {
+  factory _$$ClearAllImplCopyWith(
+          _$ClearAllImpl value, $Res Function(_$ClearAllImpl) then) =
+      __$$ClearAllImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_ClearAllCopyWithImpl<$Res>
-    extends _$MultipleDeleteEventCopyWithImpl<$Res, _$_ClearAll>
-    implements _$$_ClearAllCopyWith<$Res> {
-  __$$_ClearAllCopyWithImpl(
-      _$_ClearAll _value, $Res Function(_$_ClearAll) _then)
+class __$$ClearAllImplCopyWithImpl<$Res>
+    extends _$MultipleDeleteEventCopyWithImpl<$Res, _$ClearAllImpl>
+    implements _$$ClearAllImplCopyWith<$Res> {
+  __$$ClearAllImplCopyWithImpl(
+      _$ClearAllImpl _value, $Res Function(_$ClearAllImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_ClearAll implements _ClearAll {
-  const _$_ClearAll();
+class _$ClearAllImpl implements _ClearAll {
+  const _$ClearAllImpl();
 
   @override
   String toString() {
@@ -352,9 +354,9 @@ class _$_ClearAll implements _ClearAll {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_ClearAll);
+        (other.runtimeType == runtimeType && other is _$ClearAllImpl);
   }
 
   @override
@@ -430,7 +432,7 @@ class _$_ClearAll implements _ClearAll {
 }
 
 abstract class _ClearAll implements MultipleDeleteEvent {
-  const factory _ClearAll() = _$_ClearAll;
+  const factory _ClearAll() = _$ClearAllImpl;
 }
 
 /// @nodoc
@@ -512,24 +514,25 @@ class _$MultipleDeleteStateCopyWithImpl<$Res, $Val extends MultipleDeleteState>
 }
 
 /// @nodoc
-abstract class _$$_InitialCopyWith<$Res> {
-  factory _$$_InitialCopyWith(
-          _$_Initial value, $Res Function(_$_Initial) then) =
-      __$$_InitialCopyWithImpl<$Res>;
+abstract class _$$InitialImplCopyWith<$Res> {
+  factory _$$InitialImplCopyWith(
+          _$InitialImpl value, $Res Function(_$InitialImpl) then) =
+      __$$InitialImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res>
-    extends _$MultipleDeleteStateCopyWithImpl<$Res, _$_Initial>
-    implements _$$_InitialCopyWith<$Res> {
-  __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
+class __$$InitialImplCopyWithImpl<$Res>
+    extends _$MultipleDeleteStateCopyWithImpl<$Res, _$InitialImpl>
+    implements _$$InitialImplCopyWith<$Res> {
+  __$$InitialImplCopyWithImpl(
+      _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Initial implements _Initial {
-  const _$_Initial();
+class _$InitialImpl implements _Initial {
+  const _$InitialImpl();
 
   @override
   String toString() {
@@ -537,9 +540,9 @@ class _$_Initial implements _Initial {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Initial);
+        (other.runtimeType == runtimeType && other is _$InitialImpl);
   }
 
   @override
@@ -627,24 +630,24 @@ class _$_Initial implements _Initial {
 }
 
 abstract class _Initial implements MultipleDeleteState {
-  const factory _Initial() = _$_Initial;
+  const factory _Initial() = _$InitialImpl;
 }
 
 /// @nodoc
-abstract class _$$_SelectedCopyWith<$Res> {
-  factory _$$_SelectedCopyWith(
-          _$_Selected value, $Res Function(_$_Selected) then) =
-      __$$_SelectedCopyWithImpl<$Res>;
+abstract class _$$SelectedImplCopyWith<$Res> {
+  factory _$$SelectedImplCopyWith(
+          _$SelectedImpl value, $Res Function(_$SelectedImpl) then) =
+      __$$SelectedImplCopyWithImpl<$Res>;
   @useResult
   $Res call({List<String> selectedIds});
 }
 
 /// @nodoc
-class __$$_SelectedCopyWithImpl<$Res>
-    extends _$MultipleDeleteStateCopyWithImpl<$Res, _$_Selected>
-    implements _$$_SelectedCopyWith<$Res> {
-  __$$_SelectedCopyWithImpl(
-      _$_Selected _value, $Res Function(_$_Selected) _then)
+class __$$SelectedImplCopyWithImpl<$Res>
+    extends _$MultipleDeleteStateCopyWithImpl<$Res, _$SelectedImpl>
+    implements _$$SelectedImplCopyWith<$Res> {
+  __$$SelectedImplCopyWithImpl(
+      _$SelectedImpl _value, $Res Function(_$SelectedImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -652,7 +655,7 @@ class __$$_SelectedCopyWithImpl<$Res>
   $Res call({
     Object? selectedIds = null,
   }) {
-    return _then(_$_Selected(
+    return _then(_$SelectedImpl(
       null == selectedIds
           ? _value._selectedIds
           : selectedIds // ignore: cast_nullable_to_non_nullable
@@ -663,8 +666,8 @@ class __$$_SelectedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Selected implements _Selected {
-  const _$_Selected(final List<String> selectedIds)
+class _$SelectedImpl implements _Selected {
+  const _$SelectedImpl(final List<String> selectedIds)
       : _selectedIds = selectedIds;
 
   final List<String> _selectedIds;
@@ -681,10 +684,10 @@ class _$_Selected implements _Selected {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_Selected &&
+            other is _$SelectedImpl &&
             const DeepCollectionEquality()
                 .equals(other._selectedIds, _selectedIds));
   }
@@ -696,8 +699,8 @@ class _$_Selected implements _Selected {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_SelectedCopyWith<_$_Selected> get copyWith =>
-      __$$_SelectedCopyWithImpl<_$_Selected>(this, _$identity);
+  _$$SelectedImplCopyWith<_$SelectedImpl> get copyWith =>
+      __$$SelectedImplCopyWithImpl<_$SelectedImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -781,34 +784,34 @@ class _$_Selected implements _Selected {
 }
 
 abstract class _Selected implements MultipleDeleteState {
-  const factory _Selected(final List<String> selectedIds) = _$_Selected;
+  const factory _Selected(final List<String> selectedIds) = _$SelectedImpl;
 
   List<String> get selectedIds;
   @JsonKey(ignore: true)
-  _$$_SelectedCopyWith<_$_Selected> get copyWith =>
+  _$$SelectedImplCopyWith<_$SelectedImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_DeletingCopyWith<$Res> {
-  factory _$$_DeletingCopyWith(
-          _$_Deleting value, $Res Function(_$_Deleting) then) =
-      __$$_DeletingCopyWithImpl<$Res>;
+abstract class _$$DeletingImplCopyWith<$Res> {
+  factory _$$DeletingImplCopyWith(
+          _$DeletingImpl value, $Res Function(_$DeletingImpl) then) =
+      __$$DeletingImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_DeletingCopyWithImpl<$Res>
-    extends _$MultipleDeleteStateCopyWithImpl<$Res, _$_Deleting>
-    implements _$$_DeletingCopyWith<$Res> {
-  __$$_DeletingCopyWithImpl(
-      _$_Deleting _value, $Res Function(_$_Deleting) _then)
+class __$$DeletingImplCopyWithImpl<$Res>
+    extends _$MultipleDeleteStateCopyWithImpl<$Res, _$DeletingImpl>
+    implements _$$DeletingImplCopyWith<$Res> {
+  __$$DeletingImplCopyWithImpl(
+      _$DeletingImpl _value, $Res Function(_$DeletingImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_Deleting implements _Deleting {
-  const _$_Deleting();
+class _$DeletingImpl implements _Deleting {
+  const _$DeletingImpl();
 
   @override
   String toString() {
@@ -816,9 +819,9 @@ class _$_Deleting implements _Deleting {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_Deleting);
+        (other.runtimeType == runtimeType && other is _$DeletingImpl);
   }
 
   @override
@@ -906,29 +909,29 @@ class _$_Deleting implements _Deleting {
 }
 
 abstract class _Deleting implements MultipleDeleteState {
-  const factory _Deleting() = _$_Deleting;
+  const factory _Deleting() = _$DeletingImpl;
 }
 
 /// @nodoc
-abstract class _$$_DeleteSuccessCopyWith<$Res> {
-  factory _$$_DeleteSuccessCopyWith(
-          _$_DeleteSuccess value, $Res Function(_$_DeleteSuccess) then) =
-      __$$_DeleteSuccessCopyWithImpl<$Res>;
+abstract class _$$DeleteSuccessImplCopyWith<$Res> {
+  factory _$$DeleteSuccessImplCopyWith(
+          _$DeleteSuccessImpl value, $Res Function(_$DeleteSuccessImpl) then) =
+      __$$DeleteSuccessImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_DeleteSuccessCopyWithImpl<$Res>
-    extends _$MultipleDeleteStateCopyWithImpl<$Res, _$_DeleteSuccess>
-    implements _$$_DeleteSuccessCopyWith<$Res> {
-  __$$_DeleteSuccessCopyWithImpl(
-      _$_DeleteSuccess _value, $Res Function(_$_DeleteSuccess) _then)
+class __$$DeleteSuccessImplCopyWithImpl<$Res>
+    extends _$MultipleDeleteStateCopyWithImpl<$Res, _$DeleteSuccessImpl>
+    implements _$$DeleteSuccessImplCopyWith<$Res> {
+  __$$DeleteSuccessImplCopyWithImpl(
+      _$DeleteSuccessImpl _value, $Res Function(_$DeleteSuccessImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_DeleteSuccess implements _DeleteSuccess {
-  const _$_DeleteSuccess();
+class _$DeleteSuccessImpl implements _DeleteSuccess {
+  const _$DeleteSuccessImpl();
 
   @override
   String toString() {
@@ -936,9 +939,9 @@ class _$_DeleteSuccess implements _DeleteSuccess {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_DeleteSuccess);
+        (other.runtimeType == runtimeType && other is _$DeleteSuccessImpl);
   }
 
   @override
@@ -1026,29 +1029,29 @@ class _$_DeleteSuccess implements _DeleteSuccess {
 }
 
 abstract class _DeleteSuccess implements MultipleDeleteState {
-  const factory _DeleteSuccess() = _$_DeleteSuccess;
+  const factory _DeleteSuccess() = _$DeleteSuccessImpl;
 }
 
 /// @nodoc
-abstract class _$$_DeleteFailureCopyWith<$Res> {
-  factory _$$_DeleteFailureCopyWith(
-          _$_DeleteFailure value, $Res Function(_$_DeleteFailure) then) =
-      __$$_DeleteFailureCopyWithImpl<$Res>;
+abstract class _$$DeleteFailureImplCopyWith<$Res> {
+  factory _$$DeleteFailureImplCopyWith(
+          _$DeleteFailureImpl value, $Res Function(_$DeleteFailureImpl) then) =
+      __$$DeleteFailureImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_DeleteFailureCopyWithImpl<$Res>
-    extends _$MultipleDeleteStateCopyWithImpl<$Res, _$_DeleteFailure>
-    implements _$$_DeleteFailureCopyWith<$Res> {
-  __$$_DeleteFailureCopyWithImpl(
-      _$_DeleteFailure _value, $Res Function(_$_DeleteFailure) _then)
+class __$$DeleteFailureImplCopyWithImpl<$Res>
+    extends _$MultipleDeleteStateCopyWithImpl<$Res, _$DeleteFailureImpl>
+    implements _$$DeleteFailureImplCopyWith<$Res> {
+  __$$DeleteFailureImplCopyWithImpl(
+      _$DeleteFailureImpl _value, $Res Function(_$DeleteFailureImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_DeleteFailure implements _DeleteFailure {
-  const _$_DeleteFailure();
+class _$DeleteFailureImpl implements _DeleteFailure {
+  const _$DeleteFailureImpl();
 
   @override
   String toString() {
@@ -1056,9 +1059,9 @@ class _$_DeleteFailure implements _DeleteFailure {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$_DeleteFailure);
+        (other.runtimeType == runtimeType && other is _$DeleteFailureImpl);
   }
 
   @override
@@ -1146,5 +1149,5 @@ class _$_DeleteFailure implements _DeleteFailure {
 }
 
 abstract class _DeleteFailure implements MultipleDeleteState {
-  const factory _DeleteFailure() = _$_DeleteFailure;
+  const factory _DeleteFailure() = _$DeleteFailureImpl;
 }

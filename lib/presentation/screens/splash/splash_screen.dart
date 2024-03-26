@@ -9,6 +9,7 @@ import 'package:notedup/presentation/routes/routes.dart';
 import 'package:notedup/presentation/theme/colors.dart';
 import 'package:notedup/presentation/theme/typography.dart';
 
+@RoutePage()
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
 

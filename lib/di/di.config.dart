@@ -4,12 +4,14 @@
 // InjectableConfigGenerator
 // **************************************************************************
 
+// ignore_for_file: type=lint
+// coverage:ignore-file
+
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 import 'package:notedup/data/local/database.dart' as _i5;
 import 'package:notedup/data/repository/note_repository.dart' as _i7;
-import 'package:notedup/di/module.dart' as _i21;
 import 'package:notedup/domain/database/database.dart' as _i4;
 import 'package:notedup/domain/repository/note_repository.dart' as _i6;
 import 'package:notedup/domain/usecase/add_note_usecase.dart' as _i10;
@@ -30,11 +32,10 @@ import 'package:notedup/presentation/screens/home/bloc/multiple_delete/multiple_
 import 'package:notedup/presentation/screens/note_detail/bloc/action/note_action_bloc.dart'
     as _i19;
 import 'package:notedup/presentation/screens/note_detail/bloc/detail/note_detail_bloc.dart'
-    as _i20; // ignore_for_file: unnecessary_lambdas
+    as _i20;
 
-// ignore_for_file: lines_longer_than_80_chars
 extension GetItInjectableX on _i1.GetIt {
-  // initializes the registration of main-scope dependencies inside of GetIt
+// initializes the registration of main-scope dependencies inside of GetIt
   _i1.GetIt init({
     String? environment,
     _i2.EnvironmentFilter? environmentFilter,
@@ -44,8 +45,7 @@ extension GetItInjectableX on _i1.GetIt {
       environment,
       environmentFilter,
     );
-    final registerCoreDependencies = _$RegisterCoreDependencies();
-    gh.factory<_i3.AppRouter>(() => registerCoreDependencies.appRouter);
+    gh.singleton<_i3.AppRouter>(() => _i3.AppRouter());
     gh.lazySingleton<_i4.Database>(() => _i5.LocalDBImplementation());
     gh.lazySingleton<_i6.NoteRepository>(
         () => _i7.NoteRepositoryImplementation(gh<_i4.Database>()));
@@ -80,5 +80,3 @@ extension GetItInjectableX on _i1.GetIt {
     return this;
   }
 }
-
-class _$RegisterCoreDependencies extends _i21.RegisterCoreDependencies {}

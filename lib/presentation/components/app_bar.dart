@@ -37,7 +37,7 @@ class NoteAppBar extends StatelessWidget implements PreferredSizeWidget {
               if (autoImplementLeading)
                 AppButton(
                   child: const Icon(Icons.arrow_back),
-                  onPressed: () => context.router.pop(),
+                  onPressed: () => context.router.popForced(),
                 ),
               (title != null)
                   ? Expanded(

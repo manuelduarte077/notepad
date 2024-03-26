@@ -1,142 +1,136 @@
-// **************************************************************************
-// AutoRouteGenerator
-// **************************************************************************
-
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
-// AutoRouteGenerator
+// AutoRouterGenerator
 // **************************************************************************
-//
+
 // ignore_for_file: type=lint
+// coverage:ignore-file
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'package:auto_route/auto_route.dart' as _i2;
-import 'package:flutter/cupertino.dart' as _i5;
-import 'package:flutter/material.dart' as _i3;
+import 'package:auto_route/auto_route.dart' as _i5;
+import 'package:flutter/material.dart' as _i6;
+import 'package:notedup/domain/model/note.dart' as _i7;
+import 'package:notedup/presentation/screens/add_update_note/add_update_note_screen.dart'
+    as _i1;
+import 'package:notedup/presentation/screens/home/home_screen.dart' as _i2;
+import 'package:notedup/presentation/screens/note_detail/note_detail_screen.dart'
+    as _i3;
+import 'package:notedup/presentation/screens/splash/splash_screen.dart' as _i4;
 
-import '../../domain/model/note.dart' as _i6;
-import '../screens/screens.dart' as _i1;
-import 'routes.dart' as _i4;
-
-class AppRouter extends _i2.RootStackRouter {
-  AppRouter([_i3.GlobalKey<_i3.NavigatorState>? navigatorKey])
-      : super(navigatorKey);
+abstract class $AppRouter extends _i5.RootStackRouter {
+  $AppRouter({super.navigatorKey});
 
   @override
-  final Map<String, _i2.PageFactory> pagesMap = {
-    SplashRoute.name: (routeData) {
-      return _i2.CustomPage<dynamic>(
-        routeData: routeData,
-        child: const _i1.SplashScreen(),
-        transitionsBuilder: _i4.TransitionsBuilders.slideRightWithFade,
-        durationInMilliseconds: 200,
-        opaque: true,
-        barrierDismissible: false,
-      );
-    },
-    HomeRoute.name: (routeData) {
-      return _i2.CustomPage<dynamic>(
-        routeData: routeData,
-        child: const _i1.HomeScreen(),
-        transitionsBuilder: _i4.TransitionsBuilders.slideRightWithFade,
-        durationInMilliseconds: 200,
-        opaque: true,
-        barrierDismissible: false,
-      );
-    },
-    NoteDetailRoute.name: (routeData) {
-      final args = routeData.argsAs<NoteDetailRouteArgs>();
-      return _i2.CustomPage<dynamic>(
-        routeData: routeData,
-        child: _i1.NoteDetailScreen(
-          key: args.key,
-          noteId: args.noteId,
-        ),
-        transitionsBuilder: _i4.TransitionsBuilders.slideRightWithFade,
-        durationInMilliseconds: 200,
-        opaque: true,
-        barrierDismissible: false,
-      );
-    },
+  final Map<String, _i5.PageFactory> pagesMap = {
     AddUpdateNoteRoute.name: (routeData) {
       final args = routeData.argsAs<AddUpdateNoteRouteArgs>(
           orElse: () => const AddUpdateNoteRouteArgs());
-      return _i2.CustomPage<dynamic>(
+      return _i5.AutoRoutePage<dynamic>(
         routeData: routeData,
         child: _i1.AddUpdateNoteScreen(
           key: args.key,
           note: args.note,
         ),
-        transitionsBuilder: _i4.TransitionsBuilders.slideRightWithFade,
-        durationInMilliseconds: 200,
-        opaque: true,
-        barrierDismissible: false,
+      );
+    },
+    HomeRoute.name: (routeData) {
+      return _i5.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i2.HomeScreen(),
+      );
+    },
+    NoteDetailRoute.name: (routeData) {
+      final args = routeData.argsAs<NoteDetailRouteArgs>();
+      return _i5.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: _i3.NoteDetailScreen(
+          key: args.key,
+          noteId: args.noteId,
+        ),
+      );
+    },
+    SplashRoute.name: (routeData) {
+      return _i5.AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const _i4.SplashScreen(),
       );
     },
   };
-
-  @override
-  List<_i2.RouteConfig> get routes => [
-        _i2.RouteConfig(
-          SplashRoute.name,
-          path: '/',
-        ),
-        _i2.RouteConfig(
-          HomeRoute.name,
-          path: '/notes',
-        ),
-        _i2.RouteConfig(
-          NoteDetailRoute.name,
-          path: '/notes/:noteId',
-        ),
-        _i2.RouteConfig(
-          AddUpdateNoteRoute.name,
-          path: 'add-update-note',
-        ),
-      ];
 }
 
 /// generated route for
-/// [_i1.SplashScreen]
-class SplashRoute extends _i2.PageRouteInfo<void> {
-  const SplashRoute()
-      : super(
-          SplashRoute.name,
-          path: '/',
+/// [_i1.AddUpdateNoteScreen]
+class AddUpdateNoteRoute extends _i5.PageRouteInfo<AddUpdateNoteRouteArgs> {
+  AddUpdateNoteRoute({
+    _i6.Key? key,
+    _i7.Note? note,
+    List<_i5.PageRouteInfo>? children,
+  }) : super(
+          AddUpdateNoteRoute.name,
+          args: AddUpdateNoteRouteArgs(
+            key: key,
+            note: note,
+          ),
+          initialChildren: children,
         );
 
-  static const String name = 'SplashRoute';
+  static const String name = 'AddUpdateNoteRoute';
+
+  static const _i5.PageInfo<AddUpdateNoteRouteArgs> page =
+      _i5.PageInfo<AddUpdateNoteRouteArgs>(name);
+}
+
+class AddUpdateNoteRouteArgs {
+  const AddUpdateNoteRouteArgs({
+    this.key,
+    this.note,
+  });
+
+  final _i6.Key? key;
+
+  final _i7.Note? note;
+
+  @override
+  String toString() {
+    return 'AddUpdateNoteRouteArgs{key: $key, note: $note}';
+  }
 }
 
 /// generated route for
-/// [_i1.HomeScreen]
-class HomeRoute extends _i2.PageRouteInfo<void> {
-  const HomeRoute()
+/// [_i2.HomeScreen]
+class HomeRoute extends _i5.PageRouteInfo<void> {
+  const HomeRoute({List<_i5.PageRouteInfo>? children})
       : super(
           HomeRoute.name,
-          path: '/notes',
+          initialChildren: children,
         );
 
   static const String name = 'HomeRoute';
+
+  static const _i5.PageInfo<void> page = _i5.PageInfo<void>(name);
 }
 
 /// generated route for
-/// [_i1.NoteDetailScreen]
-class NoteDetailRoute extends _i2.PageRouteInfo<NoteDetailRouteArgs> {
+/// [_i3.NoteDetailScreen]
+class NoteDetailRoute extends _i5.PageRouteInfo<NoteDetailRouteArgs> {
   NoteDetailRoute({
-    _i5.Key? key,
+    _i6.Key? key,
     required String noteId,
+    List<_i5.PageRouteInfo>? children,
   }) : super(
           NoteDetailRoute.name,
-          path: '/notes/:noteId',
           args: NoteDetailRouteArgs(
             key: key,
             noteId: noteId,
           ),
+          initialChildren: children,
         );
 
   static const String name = 'NoteDetailRoute';
+
+  static const _i5.PageInfo<NoteDetailRouteArgs> page =
+      _i5.PageInfo<NoteDetailRouteArgs>(name);
 }
 
 class NoteDetailRouteArgs {
@@ -145,7 +139,7 @@ class NoteDetailRouteArgs {
     required this.noteId,
   });
 
-  final _i5.Key? key;
+  final _i6.Key? key;
 
   final String noteId;
 
@@ -156,35 +150,15 @@ class NoteDetailRouteArgs {
 }
 
 /// generated route for
-/// [_i1.AddUpdateNoteScreen]
-class AddUpdateNoteRoute extends _i2.PageRouteInfo<AddUpdateNoteRouteArgs> {
-  AddUpdateNoteRoute({
-    _i5.Key? key,
-    _i6.Note? note,
-  }) : super(
-          AddUpdateNoteRoute.name,
-          path: 'add-update-note',
-          args: AddUpdateNoteRouteArgs(
-            key: key,
-            note: note,
-          ),
+/// [_i4.SplashScreen]
+class SplashRoute extends _i5.PageRouteInfo<void> {
+  const SplashRoute({List<_i5.PageRouteInfo>? children})
+      : super(
+          SplashRoute.name,
+          initialChildren: children,
         );
 
-  static const String name = 'AddUpdateNoteRoute';
-}
+  static const String name = 'SplashRoute';
 
-class AddUpdateNoteRouteArgs {
-  const AddUpdateNoteRouteArgs({
-    this.key,
-    this.note,
-  });
-
-  final _i5.Key? key;
-
-  final _i6.Note? note;
-
-  @override
-  String toString() {
-    return 'AddUpdateNoteRouteArgs{key: $key, note: $note}';
-  }
+  static const _i5.PageInfo<void> page = _i5.PageInfo<void>(name);
 }

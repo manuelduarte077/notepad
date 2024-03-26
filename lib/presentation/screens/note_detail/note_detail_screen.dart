@@ -12,6 +12,7 @@ import 'package:notedup/presentation/theme/typography.dart';
 import 'bloc/action/note_action_bloc.dart';
 import 'bloc/detail/note_detail_bloc.dart';
 
+@RoutePage()
 class NoteDetailScreen extends StatefulWidget {
   const NoteDetailScreen({super.key, required this.noteId});
   final String noteId;
