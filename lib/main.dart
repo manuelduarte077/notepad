@@ -1,6 +1,10 @@
+import 'dart:io';
+
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:macos_ui/macos_ui.dart';
 import 'package:notedup/common/constants.dart';
 import 'package:notedup/data/dto/note_dto.dart';
 import 'package:notedup/observer.dart';
@@ -8,7 +12,17 @@ import 'package:notedup/observer.dart';
 import 'di/di.dart';
 import 'presentation/app.dart';
 
+Future<void> _configureMacosWindowUtils() async {
+  const config = MacosWindowUtilsConfig();
+  await config.apply();
+}
+
 Future main() async {
+  if (!kIsWeb) {
+    if (Platform.isMacOS) {
+      await _configureMacosWindowUtils();
+    }
+  }
   //* observe bloc logs
   Bloc.observer = MyBlocObserver();
 

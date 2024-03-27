@@ -45,7 +45,7 @@ extension GetItInjectableX on _i1.GetIt {
       environment,
       environmentFilter,
     );
-    gh.singleton<_i3.AppRouter>(() => _i3.AppRouter());
+    gh.singleton<_i3.AppRouter>(_i3.AppRouter());
     gh.lazySingleton<_i4.Database>(() => _i5.LocalDBImplementation());
     gh.lazySingleton<_i6.NoteRepository>(
         () => _i7.NoteRepositoryImplementation(gh<_i4.Database>()));
