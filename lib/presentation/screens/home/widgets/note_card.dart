@@ -1,9 +1,6 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:notedup/domain/model/note.dart';
 
-import 'package:notedup/presentation/theme/colors.dart';
 import 'package:notedup/presentation/theme/spacing.dart';
 import 'package:notedup/presentation/theme/typography.dart';
 
@@ -11,89 +8,59 @@ class NoteCard extends StatelessWidget {
   const NoteCard({
     super.key,
     required this.note,
-    this.selected = false,
-    this.onSelect,
     this.onTap,
   });
 
   final Note note;
-  final bool selected;
-  final Function()? onSelect;
   final Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      clipBehavior: Clip.antiAlias,
-      borderRadius: BorderRadius.circular(AppSpacings.m),
-      color: note.color,
-      child: InkWell(
-        splashColor: Colors.black12,
-        onLongPress: onSelect,
-        onTap: onTap,
-        child: Container(
-          constraints: const BoxConstraints(
-            maxHeight: 300,
-            minHeight: 100,
-          ),
-          padding: const EdgeInsets.symmetric(
-            horizontal: AppSpacings.l,
-            vertical: AppSpacings.l,
-          ),
-          child: Stack(
-            children: [
-              Column(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Flexible(
-                    child: AutoSizeText(
-                      note.title ?? '',
-                      presetFontSizes: const [16, 14, 12, 10, 8],
-                      textScaleFactor: 1,
-                      softWrap: true,
-                      style: AppTypography.headline6,
-                      group: AutoSizeGroup(),
-                      overflow: TextOverflow.fade,
-                    ),
-                  ),
-                  const SizedBox(height: AppSpacings.m),
-                  Text(
-                    note.date,
-                    style: AppTypography.description
-                        .copyWith(color: Colors.black87),
-                  ),
-                ],
-              ),
-              if (selected)
-                Align(
-                  alignment: Alignment.topRight,
-                  heightFactor: 2,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      color: AppColors.primary,
-                      shape: BoxShape.circle,
-                      boxShadow: [
-                        BoxShadow(
-                          blurRadius: 10,
-                          spreadRadius: 20,
-                          color: note.color ?? AppColors.primary,
-                        ),
-                      ],
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Icon(
-                        Icons.check,
-                        color: note.color,
-                        size: 20,
-                      ),
-                    ),
-                  ).animate().fadeIn(duration: 100.ms),
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        padding: const EdgeInsets.all(AppSpacings.xl),
+        constraints: const BoxConstraints(
+          minHeight: 100,
+          minWidth: 100,
+        ),
+        decoration: BoxDecoration(
+          color: note.color,
+          borderRadius: BorderRadius.circular(8),
+          boxShadow: const [
+            BoxShadow(
+              color: Colors.black12,
+              blurRadius: 4,
+              offset: Offset(0, 2),
+            ),
+          ],
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              note.title ?? '',
+              style: AppTypography.headline6,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+            ),
+            const SizedBox(height: AppSpacings.xl),
+            Row(
+              children: [
+                const Icon(
+                  Icons.calendar_today,
+                  size: 16,
+                  color: Colors.black87,
                 ),
-            ],
-          ),
+                const SizedBox(width: AppSpacings.s),
+                Text(
+                  note.date,
+                  style:
+                      AppTypography.description.copyWith(color: Colors.black87),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );
