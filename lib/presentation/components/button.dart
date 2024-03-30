@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:notedup/common/constants.dart';
 import 'package:notedup/presentation/theme/spacing.dart';
@@ -41,7 +44,9 @@ class AppButton extends StatelessWidget {
                   ? Text(
                       ' Saving.. ',
                       style: AppTypography.buttonLink.copyWith(
-                        color: Colors.white,
+                        color: Platform.isIOS
+                            ? CupertinoColors.white
+                            : Colors.white,
                         fontSize: 14,
                       ),
                     )

@@ -4,6 +4,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:macos_ui/macos_ui.dart';
 
+import 'package:notedup/presentation/routes/routes.dart';
+
+@RoutePage()
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
 
@@ -50,6 +53,7 @@ class IosSettingsScreen extends StatelessWidget {
     return CupertinoPageScaffold(
       navigationBar: const CupertinoNavigationBar(
         middle: Text('Settings'),
+        previousPageTitle: 'Notes',
       ),
       child: Container(),
     );

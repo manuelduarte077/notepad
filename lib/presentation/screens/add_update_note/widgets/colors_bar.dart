@@ -14,24 +14,21 @@ class ColorsBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       minimum: const EdgeInsets.only(bottom: 12),
-      child: Material(
-        color: selectedColor,
-        child: SizedBox(
-          height: kToolbarHeight,
-          child: Center(
-            child: SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: colors
-                    .map(
-                      (color) => _ColorBox(
-                        color: color,
-                        isSelected: selectedColor == color,
-                        onTap: () => onChanged(color),
-                      ),
-                    )
-                    .toList(),
-              ),
+      child: SizedBox(
+        height: kToolbarHeight,
+        child: Center(
+          child: SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: colors
+                  .map(
+                    (color) => _ColorBox(
+                      color: color,
+                      isSelected: selectedColor == color,
+                      onTap: () => onChanged(color),
+                    ),
+                  )
+                  .toList(),
             ),
           ),
         ),
@@ -57,17 +54,21 @@ class _ColorBox extends StatelessWidget {
       padding: const EdgeInsets.all(AppSpacings.s),
       child: GestureDetector(
         onTap: onTap,
-        child: Material(
+        child: Card(
+          elevation: isSelected ? 4 : 0,
+          margin: const EdgeInsets.all(0),
           shape: const CircleBorder(),
-          elevation: isSelected ? 2 : 0.2,
           child: Container(
             height: 40,
             width: 40,
             margin: const EdgeInsets.all(AppSpacings.s),
-            decoration: BoxDecoration(shape: BoxShape.circle, color: color),
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              color: color,
+            ),
             child: isSelected
-                ? const Icon(
-                    Icons.check,
+                ? Icon(
+                    Platform.isIOS ? CupertinoIcons.check_mark : Icons.check,
                     color: AppColors.title,
                     size: 36,
                   )
