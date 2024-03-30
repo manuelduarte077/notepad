@@ -22,23 +22,39 @@ class _BuildTitleField extends StatelessWidget {
               softWrap: true,
             ),
           ),
-        TextField(
-          controller: _titleController,
-          style: AppTypography.headline3,
-          decoration: const InputDecoration(
-            border: InputBorder.none,
-            contentPadding: EdgeInsets.zero,
-            counterText: '',
-          ),
-          minLines: 1,
-          maxLines: maxTitleLinesCount,
-          maxLength: maxTitleCharCount,
-          onChanged: (value) {
-            context.read<AddUpdateFormBloc>().add(
-                  AddUpdateFormEvent.titleChanged(value),
-                );
-          },
-        ),
+
+        //* Show Cupertino text field for iOS.
+        Platform.isIOS
+            ? CupertinoTextFormFieldRow(
+                controller: _titleController,
+                style: AppTypography.headline3,
+                padding: EdgeInsets.zero,
+                minLines: 1,
+                maxLines: maxTitleLinesCount,
+                maxLength: maxTitleCharCount,
+                onChanged: (value) {
+                  context.read<AddUpdateFormBloc>().add(
+                        AddUpdateFormEvent.titleChanged(value),
+                      );
+                },
+              )
+            : TextField(
+                controller: _titleController,
+                style: AppTypography.headline3,
+                decoration: const InputDecoration(
+                  border: InputBorder.none,
+                  contentPadding: EdgeInsets.zero,
+                  counterText: '',
+                ),
+                minLines: 1,
+                maxLines: maxTitleLinesCount,
+                maxLength: maxTitleCharCount,
+                onChanged: (value) {
+                  context.read<AddUpdateFormBloc>().add(
+                        AddUpdateFormEvent.titleChanged(value),
+                      );
+                },
+              ),
       ],
     );
   }
@@ -66,21 +82,40 @@ class _BuildDescriptionField extends StatelessWidget {
               softWrap: true,
             ),
           ),
-        TextField(
-          controller: _descriptionController,
-          style: AppTypography.headline6,
-          decoration: const InputDecoration(
-            border: InputBorder.none,
-            contentPadding: EdgeInsets.zero,
-          ),
-          minLines: 2,
-          maxLines: 100,
-          onChanged: (value) {
-            context.read<AddUpdateFormBloc>().add(
-                  AddUpdateFormEvent.descriptionChanged(value),
-                );
-          },
-        ),
+        Platform.isIOS
+            ? CupertinoTextField(
+                controller: _descriptionController,
+                style: AppTypography.headline6,
+                padding: EdgeInsets.zero,
+                minLines: 2,
+                maxLines: 100,
+                onChanged: (value) {
+                  context
+                      .read<AddUpdateFormBloc>()
+                      .add(AddUpdateFormEvent.descriptionChanged(value));
+                },
+                decoration: const BoxDecoration(
+                  border: Border(
+                    top: BorderSide(color: Colors.transparent),
+                    bottom: BorderSide(color: Colors.transparent),
+                  ),
+                ),
+              )
+            : TextField(
+                controller: _descriptionController,
+                style: AppTypography.headline6,
+                decoration: const InputDecoration(
+                  border: InputBorder.none,
+                  contentPadding: EdgeInsets.zero,
+                ),
+                minLines: 2,
+                maxLines: 100,
+                onChanged: (value) {
+                  context
+                      .read<AddUpdateFormBloc>()
+                      .add(AddUpdateFormEvent.descriptionChanged(value));
+                },
+              ),
       ],
     );
   }

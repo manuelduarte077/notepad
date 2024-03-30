@@ -11,25 +11,43 @@ class _AddTodoTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Opacity(
       opacity: 0.6,
-      child: ListTile(
-        dense: true,
-        contentPadding: EdgeInsets.zero,
-        title: Row(
-          children: [
-            const Icon(
-              Icons.add,
-              size: 18,
-              color: AppColors.title,
+      child: Platform.isIOS
+          ? CupertinoListTile(
+              onTap: onAdd,
+              title: Row(
+                children: [
+                  const Icon(
+                    CupertinoIcons.add,
+                    size: 18,
+                    color: AppColors.title,
+                  ),
+                  const SizedBox(width: 12),
+                  Text(
+                    StringConstants.todoTitle,
+                    style: AppTypography.headline6,
+                  ),
+                ],
+              ),
+            )
+          : ListTile(
+              dense: true,
+              contentPadding: EdgeInsets.zero,
+              title: Row(
+                children: [
+                  const Icon(
+                    Icons.add,
+                    size: 18,
+                    color: AppColors.title,
+                  ),
+                  const SizedBox(width: 12),
+                  Text(
+                    StringConstants.todoTitle,
+                    style: AppTypography.headline6,
+                  ),
+                ],
+              ),
+              onTap: onAdd,
             ),
-            const SizedBox(width: 12),
-            Text(
-              StringConstants.todoTitle,
-              style: AppTypography.headline6,
-            ),
-          ],
-        ),
-        onTap: onAdd,
-      ),
     );
   }
 }
@@ -69,36 +87,58 @@ class _TodoFieldTileState extends State<_TodoFieldTile> {
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      dense: true,
-      contentPadding: EdgeInsets.zero,
-      title: TextField(
-        focusNode: focusNode,
-        controller: todoController,
-        style: AppTypography.headline6,
-        decoration: InputDecoration(
-          isDense: true,
-          border: InputBorder.none,
-          hintText: StringConstants.todoPlaceholder,
-          hintStyle: AppTypography.headline6.copyWith(
-            color: AppColors.title.withOpacity(0.6),
-          ),
-          counterText: '',
-        ),
-        onChanged: widget.onChanged,
-        maxLength: todoMaxCharCount,
-        maxLines: 4,
-        minLines: 1,
-      ),
-      trailing: IconButton(
-        iconSize: 18,
-        icon: const Icon(
-          Icons.delete,
-          color: Colors.black87,
-        ),
-        onPressed: widget.onRemoved,
-      ),
-    );
+    return Platform.isIOS
+        ? CupertinoListTile(
+            padding: EdgeInsets.zero,
+            title: CupertinoTextFormFieldRow(
+              focusNode: focusNode,
+              controller: todoController,
+              style: AppTypography.headline6,
+              placeholder: StringConstants.todoPlaceholder,
+              onChanged: widget.onChanged,
+              maxLength: todoMaxCharCount,
+              maxLines: 4,
+              minLines: 1,
+            ),
+            trailing: CupertinoButton(
+              padding: EdgeInsets.zero,
+              onPressed: widget.onRemoved,
+              child: const Icon(
+                CupertinoIcons.delete,
+                color: Colors.black87,
+                size: 18,
+              ),
+            ))
+        : ListTile(
+            dense: true,
+            contentPadding: EdgeInsets.zero,
+            title: TextField(
+              focusNode: focusNode,
+              controller: todoController,
+              style: AppTypography.headline6,
+              decoration: InputDecoration(
+                isDense: true,
+                border: InputBorder.none,
+                hintText: StringConstants.todoPlaceholder,
+                hintStyle: AppTypography.headline6.copyWith(
+                  color: AppColors.title.withOpacity(0.6),
+                ),
+                counterText: '',
+              ),
+              onChanged: widget.onChanged,
+              maxLength: todoMaxCharCount,
+              maxLines: 4,
+              minLines: 1,
+            ),
+            trailing: IconButton(
+              iconSize: 18,
+              icon: const Icon(
+                Icons.delete,
+                color: Colors.black87,
+              ),
+              onPressed: widget.onRemoved,
+            ),
+          );
   }
 }
 

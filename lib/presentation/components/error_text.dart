@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import 'package:notedup/presentation/theme/colors.dart';
 import 'package:notedup/presentation/theme/typography.dart';
 
@@ -17,6 +16,6 @@ class ErrorText extends StatelessWidget {
         ),
         textAlign: TextAlign.center,
       ),
-    ).animate().fadeIn().scale();
+    );
   }
 }

@@ -36,5 +36,9 @@ class AppRouter extends $AppRouter {
           path: '/add-update-note',
           page: AddUpdateNoteRoute.page,
         ),
+        AutoRoute(
+          path: '/settings',
+          page: SettingsRoute.page,
+        ),
       ];
 }

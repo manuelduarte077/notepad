@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:notedup/common/constants.dart';
@@ -53,12 +56,23 @@ class _AddUpdateNoteScreenState extends State<AddUpdateNoteScreen> {
       builder: (ctx, state) {
         return Stack(
           children: [
-            _BuildForm(
-              widget: widget,
-              state: state,
-              titleController: _titleController,
-              descriptionController: _descriptionController,
-            ),
+            //* Show iOS form.
+            if (Platform.isIOS)
+              _BuildFormiOS(
+                widget: widget,
+                titleController: _titleController,
+                descriptionController: _descriptionController,
+                state: state,
+              ),
+
+            //* Show Android form.
+            if (Platform.isAndroid)
+              _BuildFormAndroid(
+                widget: widget,
+                titleController: _titleController,
+                descriptionController: _descriptionController,
+                state: state,
+              ),
 
             //* show overlay screen while saving.
             context
@@ -80,18 +94,129 @@ class _AddUpdateNoteScreenState extends State<AddUpdateNoteScreen> {
   }
 }
 
-class _BuildForm extends StatelessWidget {
-  const _BuildForm({
+class _BuildFormiOS extends StatelessWidget {
+  const _BuildFormiOS({
     required this.widget,
-    required TextEditingController titleController,
-    required TextEditingController descriptionController,
     required this.state,
-  })  : _titleController = titleController,
-        _descriptionController = descriptionController;
+    required this.titleController,
+    required this.descriptionController,
+  });
+
+  final AddUpdateFormState state;
+  final AddUpdateNoteScreen widget;
+  final TextEditingController titleController;
+  final TextEditingController descriptionController;
+
+  @override
+  Widget build(BuildContext context) {
+    print('Building iOS form');
+
+    return CupertinoPageScaffold(
+      navigationBar: CupertinoNavigationBar(
+        previousPageTitle: 'Notes',
+        middle: Text(
+          widget.note == null ? 'Add Note' : 'Update Note',
+          style: AppTypography.title.copyWith(
+            fontSize: 18,
+          ),
+        ),
+        trailing: CupertinoButton(
+          padding: EdgeInsets.zero,
+          onPressed: () => _addOrUpdateNote(context),
+          child: const Icon(CupertinoIcons.add_circled, size: 28),
+        ),
+      ),
+      child: CupertinoScrollbar(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: AppSpacings.xl,
+            vertical: AppSpacings.xl,
+          ),
+          child: Column(
+            children: [
+              Expanded(
+                child: ListView(
+                  keyboardDismissBehavior:
+                      ScrollViewKeyboardDismissBehavior.onDrag,
+                  children: [
+                    //* Add/Update Note title
+                    _BuildTitleField(
+                      state: state,
+                      titleController: titleController,
+                    ),
+
+                    const SizedBox(height: AppSpacings.xl),
+                    _BuildTodoListField(state: state),
+
+                    //* Add/Update note description.
+                    const SizedBox(height: AppSpacings.xl),
+                    _BuildDescriptionField(
+                      state: state,
+                      descriptionController: descriptionController,
+                    ),
+
+                    //* Add/Update note color.
+                    const SizedBox(height: AppSpacings.xxl),
+                  ],
+                ),
+              ),
+              ColorsBar(
+                selectedColor: state.selectedColor,
+                onChanged: (Color color) {
+                  context
+                      .read<AddUpdateFormBloc>()
+                      .add(AddUpdateFormEvent.colorChanged(color));
+                },
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  void _addOrUpdateNote(BuildContext context) {
+    if (widget.note == null) {
+      context.read<AddUpdateBloc>().add(
+            AddUpdateEvent.addNote(
+              Note(
+                title: titleController.text,
+                description: descriptionController.text,
+                color: state.selectedColor,
+                dateTime: DateTime.now(),
+                todos: state.todos,
+              ),
+            ),
+          );
+    } else {
+      context.read<AddUpdateBloc>().add(
+            AddUpdateEvent.updateNote(
+              Note(
+                id: widget.note!.id!,
+                title: titleController.text,
+                description: descriptionController.text,
+                color: state.selectedColor,
+                dateTime: DateTime.now(),
+                todos: state.todos,
+              ),
+              widget.note!.id!,
+            ),
+          );
+    }
+  }
+}
+
+class _BuildFormAndroid extends StatelessWidget {
+  const _BuildFormAndroid({
+    required this.widget,
+    required this.state,
+    required this.titleController,
+    required this.descriptionController,
+  });
 
   final AddUpdateNoteScreen widget;
-  final TextEditingController _titleController;
-  final TextEditingController _descriptionController;
+  final TextEditingController titleController;
+  final TextEditingController descriptionController;
   final AddUpdateFormState state;
 
   @override
@@ -137,7 +262,7 @@ class _BuildForm extends StatelessWidget {
           //* Add/Update Note title
           _BuildTitleField(
             state: state,
-            titleController: _titleController,
+            titleController: titleController,
           ),
           const SizedBox(height: AppSpacings.xl),
 
@@ -146,9 +271,10 @@ class _BuildForm extends StatelessWidget {
           const SizedBox(height: AppSpacings.xl),
 
           //* Add/Update note description.
+          const SizedBox(height: AppSpacings.xl),
           _BuildDescriptionField(
             state: state,
-            descriptionController: _descriptionController,
+            descriptionController: descriptionController,
           ),
         ],
       ),
@@ -160,8 +286,8 @@ class _BuildForm extends StatelessWidget {
       context.read<AddUpdateBloc>().add(
             AddUpdateEvent.addNote(
               Note(
-                title: _titleController.text,
-                description: _descriptionController.text,
+                title: titleController.text,
+                description: descriptionController.text,
                 color: state.selectedColor,
                 dateTime: DateTime.now(),
                 todos: state.todos,
@@ -173,8 +299,8 @@ class _BuildForm extends StatelessWidget {
             AddUpdateEvent.updateNote(
               Note(
                 id: widget.note!.id!,
-                title: _titleController.text,
-                description: _descriptionController.text,
+                title: titleController.text,
+                description: descriptionController.text,
                 color: state.selectedColor,
                 dateTime: DateTime.now(),
                 todos: state.todos,
