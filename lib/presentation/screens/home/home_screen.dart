@@ -86,16 +86,17 @@ class _HomeScreenState extends State<HomeScreen> {
 
             body: CustomScrollView(
               slivers: [
-                SliverAppBar.medium(
-                  title: const Text('NotedUp'),
-                  leading: MaterialButton(
-                    padding: EdgeInsets.zero,
-                    child: const Icon(Icons.menu, size: 28),
-                    onPressed: () {
-                      scaffoldKey.currentState?.openDrawer();
-                    },
-                  ),
-                ),
+                // SliverAppBar.medium(
+                //   floating: true,
+                //   // title: const Text('NotedUp'),
+                //   // leading: MaterialButton(
+                //   //   padding: EdgeInsets.zero,
+                //   //   child: const Icon(Icons.menu, size: 28),
+                //   //   onPressed: () {
+                //   //     scaffoldKey.currentState?.openDrawer();
+                //   //   },
+                //   // ),
+                // ),
 
                 //* Show available notes list
                 const _NoteList(),
