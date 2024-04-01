@@ -109,16 +109,12 @@ class _BuildFormiOS extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print('Building iOS form');
-
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
         previousPageTitle: 'Notes',
         middle: Text(
           widget.note == null ? 'Add Note' : 'Update Note',
-          style: AppTypography.title.copyWith(
-            fontSize: 18,
-          ),
+          style: AppTypography.title.copyWith(fontSize: 18),
         ),
         trailing: CupertinoButton(
           padding: EdgeInsets.zero,

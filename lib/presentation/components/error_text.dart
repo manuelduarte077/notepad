@@ -11,9 +11,7 @@ class ErrorText extends StatelessWidget {
     return Center(
       child: Text(
         message,
-        style: AppTypography.title.copyWith(
-          color: AppColors.description,
-        ),
+        style: AppTypography.title.copyWith(color: AppColors.description),
         textAlign: TextAlign.center,
       ),
     );
