@@ -9,7 +9,10 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:macos_ui/macos_ui.dart';
 import 'package:notedup/common/constants.dart';
 import 'package:notedup/data/dto/note_dto.dart';
+import 'package:notedup/firebase_options.dart';
 import 'package:notedup/observer.dart';
+
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 
 import 'di/di.dart';
 import 'presentation/app.dart';
@@ -48,10 +51,14 @@ Future main() async {
   );
 
   try {
-    await Firebase.initializeApp();
-    FirebaseAnalytics.instance.setAnalyticsCollectionEnabled(false);
-    // set observer
-    FirebaseAnalyticsObserver(analytics: FirebaseAnalytics.instance);
+    await Firebase.initializeApp(
+      options: DefaultFirebaseOptions.currentPlatform,
+    );
+    FirebaseAnalytics.instance.setAnalyticsCollectionEnabled(true);
+
+    /// Crashlytics
+    FirebaseCrashlytics.instance.crash();
+    FirebaseCrashlytics.instance.setCrashlyticsCollectionEnabled(true);
   } catch (e) {
     print('Failed to initialize Firebase: $e');
   }

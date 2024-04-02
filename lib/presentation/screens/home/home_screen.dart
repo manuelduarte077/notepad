@@ -48,6 +48,9 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: const Icon(CupertinoIcons.add_circled, size: 28),
                         onPressed: () {
                           context.router.push(AddUpdateNoteRoute());
+
+                          //
+                          throw Exception();
                         },
                       ),
                       CupertinoButton(
