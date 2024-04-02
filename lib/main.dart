@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -18,6 +20,8 @@ Future<void> _configureMacosWindowUtils() async {
 }
 
 Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
   if (!kIsWeb) {
     if (Platform.isMacOS) {
       await _configureMacosWindowUtils();
@@ -42,6 +46,15 @@ Future main() async {
       statusBarIconBrightness: Brightness.dark,
     ),
   );
+
+  try {
+    await Firebase.initializeApp();
+    FirebaseAnalytics.instance.setAnalyticsCollectionEnabled(false);
+    // set observer
+    FirebaseAnalyticsObserver(analytics: FirebaseAnalytics.instance);
+  } catch (e) {
+    print('Failed to initialize Firebase: $e');
+  }
 
   runApp(
     MultiBlocProvider(
