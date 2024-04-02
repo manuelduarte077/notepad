@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -7,6 +9,7 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:macos_ui/macos_ui.dart';
 import 'package:notedup/common/constants.dart';
 import 'package:notedup/data/dto/note_dto.dart';
+import 'package:notedup/firebase_options.dart';
 import 'package:notedup/observer.dart';
 
 import 'di/di.dart';
@@ -18,6 +21,8 @@ Future<void> _configureMacosWindowUtils() async {
 }
 
 Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
   if (!kIsWeb) {
     if (Platform.isMacOS) {
       await _configureMacosWindowUtils();
@@ -42,6 +47,8 @@ Future main() async {
       statusBarIconBrightness: Brightness.dark,
     ),
   );
+
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   runApp(
     MultiBlocProvider(
