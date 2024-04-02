@@ -12,8 +12,6 @@ import 'package:notedup/data/dto/note_dto.dart';
 import 'package:notedup/firebase_options.dart';
 import 'package:notedup/observer.dart';
 
-import 'package:firebase_crashlytics/firebase_crashlytics.dart';
-
 import 'di/di.dart';
 import 'presentation/app.dart';
 
@@ -50,18 +48,7 @@ Future main() async {
     ),
   );
 
-  try {
-    await Firebase.initializeApp(
-      options: DefaultFirebaseOptions.currentPlatform,
-    );
-    FirebaseAnalytics.instance.setAnalyticsCollectionEnabled(true);
-
-    /// Crashlytics
-    FirebaseCrashlytics.instance.crash();
-    FirebaseCrashlytics.instance.setCrashlyticsCollectionEnabled(true);
-  } catch (e) {
-    print('Failed to initialize Firebase: $e');
-  }
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
   runApp(
     MultiBlocProvider(

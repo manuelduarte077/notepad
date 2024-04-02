@@ -48,9 +48,6 @@ class _HomeScreenState extends State<HomeScreen> {
                         child: const Icon(CupertinoIcons.add_circled, size: 28),
                         onPressed: () {
                           context.router.push(AddUpdateNoteRoute());
-
-                          //
-                          throw Exception();
                         },
                       ),
                       CupertinoButton(
@@ -124,7 +121,11 @@ class _NoteList extends StatelessWidget {
       child: BlocBuilder<HomeBloc, HomeState>(
         builder: (context, state) {
           return state.maybeWhen(
-            orElse: () => const SliverToBoxAdapter(child: Text('Loading..')),
+            orElse: () => const SliverToBoxAdapter(
+              child: Center(
+                child: Text('Create your first note !'),
+              ),
+            ),
             loaded: (notes) => SliverFillRemaining(
               child: MasonryGridView.count(
                 padding: const EdgeInsets.symmetric(
