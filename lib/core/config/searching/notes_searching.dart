@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../features/domain/entities/note.dart';
 import '../../../features/presentation/blocs/blocs.dart';
-import '../../../features/presentation/pages/home/widgets/widgets.dart';
+import '../../../features/presentation/screens/home/widgets/widgets.dart';
 import '../../util/util.dart';
 
 class NotesSearching extends SearchDelegate {

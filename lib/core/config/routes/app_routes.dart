@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import '../../../features/domain/entities/note.dart';
-import '../../../features/presentation/pages/views.dart';
+import '../../../features/presentation/screens/views.dart';
 import '../enum/enum.dart';
 
 abstract class AppRouter {

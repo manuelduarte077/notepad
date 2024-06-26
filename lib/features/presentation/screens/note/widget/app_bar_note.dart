@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../../core/core.dart';
 import '../../../blocs/blocs.dart';
-import './widgets.dart';
+import 'widgets.dart';
 
 class AppBarNote extends StatelessWidget implements PreferredSizeWidget {
   const AppBarNote({

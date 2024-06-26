@@ -5,7 +5,7 @@ import 'package:go_router/go_router.dart';
 import '../../../../core/core.dart';
 import '../../../domain/entities/note.dart';
 import '../../blocs/blocs.dart';
-import './widgets/widgets.dart';
+import 'widgets/widgets.dart';
 
 class TrashPage extends StatelessWidget {
   const TrashPage({super.key});

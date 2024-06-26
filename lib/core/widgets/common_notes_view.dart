@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 
 import '../../features/domain/entities/note.dart';
-import '../../features/presentation/pages/home/widgets/widgets.dart';
+import '../../features/presentation/screens/home/widgets/widgets.dart';
 import '../core.dart';
 
 class CommonNotesView extends StatelessWidget {

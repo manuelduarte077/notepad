@@ -4,26 +4,20 @@ import 'package:go_router/go_router.dart';
 
 import '../../../domain/entities/note.dart';
 import '../../blocs/blocs.dart';
-import '../../../../core/core.dart';
-import './widgets/widgets.dart';
+import 'widgets/widgets.dart';
+import '../../../../../core/core.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class ArchivePage extends StatelessWidget {
+  const ArchivePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      key: context.read<NoteBloc>().appScaffoldState,
-      floatingActionButton: _buildFloatingActionButton(context),
-      extendBodyBehindAppBar: true,
-      extendBody: true,
+      appBar: const AppBarAchive(),
       drawer: const AppDrawer(),
-      appBar: _buildAppbar(),
       body: _buildBody(context),
     );
   }
-
-  AppBar _buildAppbar() => AppBar(toolbarHeight: 0);
 
   Widget _buildBody(BuildContext context) {
     return BlocConsumer<NoteBloc, NoteState>(
@@ -36,12 +30,10 @@ class HomePage extends StatelessWidget {
         } else if (state is ErrorState) {
           return CommonEmptyNotes(state.drawerSectionView);
         } else if (state is NotesViewState) {
-          return SliverNotes(
-            child: CommonNotesView(
-              drawerSection: DrawerSectionView.home,
-              otherNotes: state.otherNotes,
-              pinnedNotes: state.pinnedNotes,
-            ),
+          return CommonNotesView(
+            drawerSection: DrawerSectionView.archive,
+            otherNotes: state.otherNotes,
+            pinnedNotes: const [],
           );
         }
         return const SizedBox.shrink();
@@ -55,8 +47,6 @@ class HomePage extends StatelessWidget {
       AppAlerts.displaySnackbarMsg(context, state.message);
     } else if (state is ToggleSuccessState) {
       AppAlerts.displaySnackarUndoMove(context, state.message);
-    } else if (state is EmptyInputsState) {
-      AppAlerts.displaySnackbarMsg(context, state.message);
     } else if (state is GoPopNoteState) {
       context.read<NoteBloc>().add(RefreshNotes(DrawerSelect.drawerSection));
     } else if (state is GetNoteByIdState) {
@@ -71,14 +61,6 @@ class HomePage extends StatelessWidget {
       AppRouterName.note.name,
       pathParameters: {'noteId': note.id},
       extra: note,
-    );
-  }
-
-  Widget _buildFloatingActionButton(BuildContext context) {
-    return FloatingActionButton(
-      elevation: 0,
-      child: AppIcons.add,
-      onPressed: () => context.read<NoteBloc>().add(const GetNoteById('')),
     );
   }
 }

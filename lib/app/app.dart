@@ -12,6 +12,7 @@ class NoteApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     AppDevice.setStatusBart(context);
+
     return AppProviders(
       child: AnnotatedRegion(
         value: const SystemUiOverlayStyle(),

@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../features/domain/entities/note.dart';
 import '../../features/presentation/blocs/blocs.dart';
-import '../../features/presentation/pages/note/widget/item_note.dart';
+import '../../features/presentation/screens/note/widget/item_note.dart';
 import '../core.dart';
 
 class ItemDismissibleNote extends StatelessWidget {
