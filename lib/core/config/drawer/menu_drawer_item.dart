@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:note_app/core/config/enum/drawer_views.dart';
-import 'package:note_app/core/util/util.dart';
+import 'package:notedup/core/config/enum/drawer_views.dart';
+import 'package:notedup/core/util/util.dart';
 
 class MenuDrawerItem extends StatelessWidget {
   const MenuDrawerItem(this.drawerViews) : super(key: null);
@@ -11,6 +11,7 @@ class MenuDrawerItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDrawerSelected = DrawerSelect.drawerViews == drawerViews;
+
     return Container(
       margin: const EdgeInsets.only(bottom: 8),
       padding: const EdgeInsets.only(right: 10, left: 10),

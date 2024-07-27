@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:note_app/core/util/extensions/extensions.dart';
+import 'package:notedup/core/util/extensions/extensions.dart';
 
 class CommonBottomAppBar extends StatelessWidget {
   final double? height;

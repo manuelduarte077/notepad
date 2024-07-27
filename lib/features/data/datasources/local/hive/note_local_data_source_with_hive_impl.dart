@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:hive_flutter/adapters.dart';
-import 'package:note_app/core/core.dart';
+import 'package:notedup/core/core.dart';
 import 'package:path_provider/path_provider.dart';
 
 import 'note_hive.dart';

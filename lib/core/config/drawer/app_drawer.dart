@@ -12,20 +12,18 @@ class AppDrawer extends StatelessWidget {
     return BlocBuilder<NoteBloc, NoteState>(
       builder: (context, state) {
         return Drawer(
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                _buildHeader(context),
-                _buildTextLOGO(context),
-                const MenuDrawerItem(DrawerViews.home),
-                const Divider(),
-                const MenuDrawerItem(DrawerViews.archive),
-                const MenuDrawerItem(DrawerViews.trash),
-                const MenuDrawerItem(DrawerViews.setting),
-                const Divider(),
-              ],
-            ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              _buildHeader(context),
+              _buildTextLOGO(context),
+              const MenuDrawerItem(DrawerViews.home),
+              const Divider(),
+              const MenuDrawerItem(DrawerViews.archive),
+              const MenuDrawerItem(DrawerViews.trash),
+              const MenuDrawerItem(DrawerViews.setting),
+              const Divider(),
+            ],
           ),
         );
       },
@@ -46,15 +44,12 @@ class AppDrawer extends StatelessWidget {
         TextSpan(
           children: [
             TextSpan(
-              text: 'KeepUp Note',
+              text: 'NoteUp',
               style: const TextStyle().copyWith(fontWeight: FontWeight.bold),
             ),
-            const TextSpan(text: ' '),
-            const TextSpan(text: 'Note'),
           ],
         ),
       ),
     );
   }
-//
 }

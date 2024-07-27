@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:note_app/core/util/errors/failure.dart';
+import 'package:notedup/core/util/errors/failure.dart';
 
 import '../../../core/util/util.dart';
 import '../entities/note.dart';

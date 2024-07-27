@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:note_app/core/core.dart';
+import 'package:notedup/core/core.dart';
 
 class CommonErrorNotes extends StatelessWidget {
   final DrawerSectionView drawerViewNote;

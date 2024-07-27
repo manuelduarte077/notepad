@@ -1,7 +1,7 @@
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-// import 'package:note_app/core/themes/app_scheme.dart';
+// import 'package:notedup/core/themes/app_scheme.dart';
 
 class AppTheme {
   const AppTheme._();
@@ -39,7 +39,7 @@ class AppTheme {
     visualDensity: FlexColorScheme.comfortablePlatformDensity,
     useMaterial3: true,
     swapLegacyOnMaterial3: true,
-    fontFamily: GoogleFonts.ubuntu().fontFamily,
+    fontFamily: GoogleFonts.redHatDisplay().fontFamily,
   );
 
   static final dark = FlexThemeData.dark(
@@ -71,6 +71,6 @@ class AppTheme {
     visualDensity: FlexColorScheme.comfortablePlatformDensity,
     useMaterial3: true,
     swapLegacyOnMaterial3: true,
-    fontFamily: GoogleFonts.ubuntu().fontFamily,
+    fontFamily: GoogleFonts.redHatDisplay().fontFamily,
   );
 }

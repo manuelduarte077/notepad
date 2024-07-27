@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:note_app/core/core.dart';
-import 'package:note_app/features/presentation/blocs/blocs.dart';
+import 'package:notedup/core/core.dart';
+import 'package:notedup/features/presentation/blocs/blocs.dart';
 
 import 'provider/app_provider.dart';
 

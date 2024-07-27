@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:note_app/core/core.dart';
-import 'package:note_app/app/di/get_it.dart' as di;
+import 'package:notedup/core/core.dart';
+import 'package:notedup/app/di/get_it.dart' as di;
 
 import '../../features/presentation/blocs/blocs.dart';
 

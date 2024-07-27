@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:note_app/features/presentation/blocs/blocs.dart';
+import 'package:notedup/features/presentation/blocs/blocs.dart';
 
 import '../../../../../core/core.dart';
 import 'widgets.dart';

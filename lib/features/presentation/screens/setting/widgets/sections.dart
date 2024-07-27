@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:note_app/features/presentation/screens/setting/widgets/tiles_section.dart';
+import 'package:notedup/features/presentation/screens/setting/widgets/tiles_section.dart';
 
 class Sections extends StatelessWidget {
   const Sections({super.key, required this.sections});

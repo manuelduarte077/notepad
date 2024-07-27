@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:note_app/core/core.dart';
+import 'package:notedup/core/core.dart';
 
 class CommonEmptyNotes extends StatelessWidget {
   const CommonEmptyNotes(this.drawerViewNote) : super(key: null);

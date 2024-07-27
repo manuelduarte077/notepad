@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:note_app/features/domain/entities/note.dart';
+import 'package:notedup/features/domain/entities/note.dart';
 
 import '../../../../core/core.dart';
 import '../../../domain/usecases/get_notes.dart';

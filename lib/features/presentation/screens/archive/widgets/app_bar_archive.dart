@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:note_app/core/core.dart';
+import 'package:notedup/core/core.dart';
 
 class AppBarAchive extends StatelessWidget implements PreferredSizeWidget {
   const AppBarAchive({super.key});
