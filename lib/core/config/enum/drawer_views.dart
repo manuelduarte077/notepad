@@ -3,4 +3,5 @@ enum DrawerViews {
   archive,
   trash,
   setting,
+  info,
 }

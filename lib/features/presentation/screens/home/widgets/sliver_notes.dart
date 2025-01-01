@@ -38,7 +38,7 @@ class SliverNotes extends StatelessWidget {
         forceMaterialTransparency: true,
         title: CommonSearchBar(),
         systemOverlayStyle: AppDevice.setStatusBartSilverAppBar(),
-        leading: SizedBox(),
+        leading: SizedBox.shrink(),
       ),
     );
   }

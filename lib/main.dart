@@ -8,7 +8,6 @@ import 'package:notedup/app/di/get_it.dart' as di;
 import 'package:notedup/firebase_options.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
   await Future.wait([di.init()]);
 
   /// Initialize Firebase

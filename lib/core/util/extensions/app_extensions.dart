@@ -36,6 +36,8 @@ extension DrawerViewsExtensions on DrawerViews {
         return 'Trash';
       case DrawerViews.setting:
         return 'Setting';
+      case DrawerViews.info:
+        return 'About NoteUp';
     }
   }
 
@@ -49,6 +51,8 @@ extension DrawerViewsExtensions on DrawerViews {
         return AppIcons.trash;
       case DrawerViews.setting:
         return AppIcons.setting;
+      case DrawerViews.info:
+        return AppIcons.info;
     }
   }
 

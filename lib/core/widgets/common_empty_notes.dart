@@ -38,7 +38,11 @@ class CommonEmptyNotes extends StatelessWidget {
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [appIcons, const SizedBox(height: 5.0), Text(errorMsg)],
+        children: [
+          appIcons,
+          const SizedBox(height: 5.0),
+          Text(errorMsg),
+        ],
       ),
     );
   }
