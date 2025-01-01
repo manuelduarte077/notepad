@@ -11,7 +11,22 @@ class SettingPage extends StatelessWidget {
       appBar: AppBar(title: const Text('Setting')),
       body: const Sections(
         sections: [
+          TilesSection(
+            title: 'Account',
+            tiles: [ThemesItemTile()],
+          ),
+
+          /// Auth Section
+          TilesSection(
+            title: 'Auth',
+            tiles: [
+              ThemesItemTile(),
+              ThemesItemTile(),
+              ThemesItemTile(),
+            ],
+          ),
           TilesSection(title: 'Dispaly option', tiles: [ThemesItemTile()]),
+          TilesSection(title: 'About', tiles: [ThemesItemTile()]),
         ],
       ),
     );

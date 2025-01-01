@@ -74,6 +74,7 @@ class _NotePageState extends State<NotePage> {
   void dispose() {
     _titleController.dispose();
     _contentController.dispose();
+
     super.dispose();
   }
 

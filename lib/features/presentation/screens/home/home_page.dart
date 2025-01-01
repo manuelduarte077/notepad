@@ -67,6 +67,7 @@ class HomePage extends StatelessWidget {
   void _getNoteByIdState(BuildContext context, Note note) {
     context.read<StatusIconsCubit>().toggleIconsStatus(note);
     context.read<NoteBloc>().add(ModifColorNote(note.colorIndex));
+
     context.pushNamed(
       AppRouterName.note.name,
       pathParameters: {'noteId': note.id},
@@ -75,9 +76,14 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _buildFloatingActionButton(BuildContext context) {
-    return FloatingActionButton(
-      elevation: 0,
-      child: AppIcons.add,
+    return FloatingActionButton.extended(
+      label: Text(
+        'Add Note',
+        style: context.textTheme.titleMedium
+            ?.copyWith(fontWeight: FontWeight.w600),
+      ),
+      elevation: 10,
+      icon: AppIcons.add,
       onPressed: () => context.read<NoteBloc>().add(const GetNoteById('')),
     );
   }

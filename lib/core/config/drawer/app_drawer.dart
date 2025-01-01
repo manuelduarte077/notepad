@@ -23,6 +23,11 @@ class AppDrawer extends StatelessWidget {
               const MenuDrawerItem(DrawerViews.trash),
               const MenuDrawerItem(DrawerViews.setting),
               const Divider(),
+
+              /// About Section
+              const Spacer(),
+              const MenuDrawerItem(DrawerViews.info),
+              const SizedBox(height: 10),
             ],
           ),
         );
